@@ -70,11 +70,7 @@ if(!is_compatible) {
 // Variable input -----------------------------------------------------------------------
 // Variable used to define experimental condition.
 
-var vaast_approach_training = jsPsych.randomization.sampleWithoutReplacement(["maths", "arts"], 1)[0];
-; // either "arts" or "maths
-
-var iat_self    = jsPsych.randomization.sampleWithoutReplacement(["left", "right"], 1)[0];; // either "left" or "right"
-var iat_maths_1 = jsPsych.randomization.sampleWithoutReplacement(["left", "right"], 1)[0];; // either "left" or "right"
+var vaast_1st_block = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
 
 var jspsych_id  = jsPsych.randomization.randomID();
 var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
@@ -86,25 +82,37 @@ if(prolific_pid == null) {prolific_pid = "";}
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
 
-var arts_movement  = undefined;
-var maths_movement = undefined;
+var movement_mas_block1 = undefined;
+var movement_fem_block1 = undefined;
+var movement_mas_block2 = undefined;
+var movement_fem_block2 = undefined;
 
-var approach_cat   = undefined;
-var avoidance_cat  = undefined;
+var block1_approach_cat = undefined;
+var block1_avoidanc_cat = undefined;
+var block1_approach_cat = undefined;
+var block2_avoidanc_cat = undefined;
 
-switch(vaast_approach_training) {
-  case "maths":
-    arts_movement  = "avoidance";
-    maths_movement = "approach";
-    approach_cat   = "math";
-    avoidance_cat  = "art";
+switch(vaast_1st_block) {
+  case "approach_masc":
+    movement_mas_block1 = undefined;
+    movement_fem_block1 = undefined;
+    movement_mas_block2 = undefined;
+    movement_fem_block2 = undefined;
+    block1_approach_cat = undefined;
+    block1_avoidanc_cat = undefined;
+    block1_approach_cat = undefined;
+    block2_avoidanc_cat = undefined;
     break;
 
-  case "arts":
-    arts_movement = "approach";
-    maths_movement = "avoidance";
-    approach_cat   = "art";
-    avoidance_cat  = "math";
+  case "approach_fem":
+    movement_mas_block1 = undefined;
+    movement_fem_block1 = undefined;
+    movement_mas_block2 = undefined;
+    movement_fem_block2 = undefined;
+    block1_approach_cat = undefined;
+    block1_avoidanc_cat = undefined;
+    block1_approach_cat = undefined;
+    block2_avoidanc_cat = undefined;
     break;
 }
 
