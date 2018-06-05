@@ -25,6 +25,15 @@
 // -> Any key à remplacer dans l'iat et dans le check de connection
 //
 // safari exclusion ---------------------------------------------------------------------
+// 
+// dirty hack to lock scrolling ---------------------------------------------------------
+// note that jquery needs to be loaded.
+$('body').css({'overflow':'hidden'});
+  $(document).bind('scroll',function () { 
+       window.scrollTo(0,0); 
+  });
+
+// safari & ie exclusion ----------------------------------------------------------------
 var is_safari = /^((?!chrome|android).)*safari+ie/i.test(navigator.userAgent);
 var is_ie = /*@cc_on!@*/false || !!document.documentMode;
 
