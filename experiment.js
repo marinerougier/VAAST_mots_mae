@@ -260,7 +260,6 @@ var saving_id = function(){
       client.recordEvent('prolific_id_stream', {
         session_id: jspsych_id,
         prolific_id: prolific_id,
-        vaast_approach_training: vaast_approach_training,
         "user_agent": "${keen.user_agent}",
         "keen": {
           "addons": [{
@@ -287,7 +286,6 @@ var saving_vaast_trial = function(){
       client.recordEvent('vaast_stream', {
         session_id: jspsych_id,
         prolific_id: prolific_id,
-        vaast_approach_training: vaast_approach_training,
         vaast_trial_data: jsPsych.data.get().last(3).json()
       });
     }
@@ -476,17 +474,13 @@ var vaast_instructions_3 = {
   stimulus:
     "<h1 class ='custom-title'> Task 1 </h1>" +
     "<p class='instructions'>Your instructions are to <span class='vaast-movement-instructions'>approach " +
-     approach_cat + "-related pictures</span> and to <span class='vaast-movement-instructions'>avoid " +
-     avoidance_cat + "-related pictures</span>. You can see examples of stimuli below.</p>" +
+    " ###-related pictures</span> and to <span class='vaast-movement-instructions'>avoid " +
+    " ###-related pictures</span>. You can see examples of stimuli below.</p>" +
     "<p class='instructions'>It is very important to remember which action you will" +
     " have to perform for each category. You need this information to complete the " +
     "task successfully. Please make sure that you will remember these instructions before "+
     "you start the training block of this task.</p>" +
      "<table align='center' class='vaast-table-instruction'>" +
-       "<tr>" +
-         "<th><img src='media/" + approach_cat + "_exemple.bmp'></th>" +
-         "<th><img src='media/" + avoidance_cat + "_exemple.bmp'></th>" +
-       "</tr>" +
        "<tr>" +
          "<th>Approach</th>" +
          "<th>Avoid</th>" +
