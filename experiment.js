@@ -22,9 +22,6 @@
 // OVERVIEW -----------------------------------------------------------------------------
 //
 // TODO:
-// -> Any key à remplacer dans l'iat et dans le check de connection
-//
-// safari exclusion ---------------------------------------------------------------------
 // 
 // dirty hack to lock scrolling ---------------------------------------------------------
 // note that jquery needs to be loaded.
@@ -118,6 +115,7 @@ switch(vaast_1st_block) {
 
 // VAAST stimuli ------------------------------------------------------------------------
 // vaast image stimuli ------------------------------------------------------------------
+// TODO : choose movement
 
 var vaast_stim = [
   {stimulus: 'stimuli/arts_01.jpg',  category: "arts",  movement: arts_movement},
@@ -170,7 +168,7 @@ var vaast_stim = [
   {stimulus: 'stimuli/maths_24.jpg', category: "maths", movement: maths_movement}
 ];
 
-// vaast background images --------------------------------------------------------------
+// vaast background images --------------------------------------------------------------,
 
 var background = [
   "background/2.jpg",
@@ -293,10 +291,6 @@ var save_vaast_trial = {
 
 
 // EXPERIMENT ---------------------------------------------------------------------------
-
-
-
-
 // initial instructions -----------------------------------------------------------------
 var welcome = {
   type: "html-keyboard-response",
