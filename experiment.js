@@ -483,11 +483,11 @@ var vaast_fixation = {
 }
 
 var vaast_first_step = {
-  type: 'vaast-image',
+  type: 'vaast-text',
   stimulus: jsPsych.timelineVariable('stimulus'),
   position: 2,
   background_images: background,
-  stim_sizes:  stim_sizes,
+  font_sizes:  stim_sizes,
   approach_key: "uparrow",
   avoidance_key: "downarrow",
   stim_movement: jsPsych.timelineVariable('movement'),
@@ -498,11 +498,11 @@ var vaast_first_step = {
 }
 
 var vaast_second_step = {
-  type: 'vaast-image',
+  type: 'vaast-text',
   position: next_position,
   stimulus: jsPsych.timelineVariable('stimulus'),
   background_images: background,
-  stim_sizes:  stim_sizes,
+  font_sizes:  stim_sizes,
   approach_key: "uparrow",
   avoidance_key: "downarrow",
   stim_movement: jsPsych.timelineVariable('movement'),
@@ -513,11 +513,11 @@ var vaast_second_step = {
 }
 
 var vaast_third_step = {
-  type: 'vaast-image',
+  type: 'vaast-text',
   position: next_position,
   stimulus: jsPsych.timelineVariable('stimulus'),
   background_images: background,
-  stim_sizes:  stim_sizes,
+  font_sizes:  stim_sizes,
   stim_movement: jsPsych.timelineVariable('movement'),
   response_ends_trial: false,
   trial_duration: 650
