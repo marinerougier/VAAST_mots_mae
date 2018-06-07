@@ -467,21 +467,21 @@ var vaast_instructions_2 = {
 var vaast_instructions_3 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Task 1 </h1>" +
-    "<p class='instructions'>Your instructions are to <span class='vaast-movement-instructions'>approach " +
-    " ###-related pictures</span> and to <span class='vaast-movement-instructions'>avoid " +
-    " ###-related pictures</span>. You can see examples of stimuli below.</p>" +
-    "<p class='instructions'>It is very important to remember which action you will" +
-    " have to perform for each category. You need this information to complete the " +
-    "task successfully. Please make sure that you will remember these instructions before "+
-    "you start the training block of this task.</p>" +
+    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots féminins (en appuyant " +
+    "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots masculins (en appuyant " +
+    "sur la flèche vers le bas</strong>." +
+    "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
+    "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
+    "<strong>le plus rapidement et le plus exactement possible</strong>." +
      "<table align='center' class='vaast-table-instruction'>" +
        "<tr>" +
          "<th>Approach</th>" +
          "<th>Avoid</th>" +
        "</tr>" +
      "</table>" +
-    "<p class = 'continue-instructions'>Press <strong>enter</strong> to start training.</p>",
+    "<p class = 'continue-instructions'>Appuyez sur <strong>entrer</strong> pour" +
+    "commencer l'entraînement.</p>",
   choices: [13]
 };
 
