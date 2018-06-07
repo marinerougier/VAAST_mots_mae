@@ -325,19 +325,20 @@ var save_vaast_trial = {
 var welcome = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Welcome </h1>" +
-    "<p class='instructions'>Thank you for participating in this study.<p>" +
-    "<p class='instructions'>During this study, you will have to complete two different tasks. We " +
-    " will gather data related to how you complete them, but " +
-    "no personally identifying information will be collected.</p>" +
-    "<p class='instructions'>Because we rely on third party services to gather data, ad-blocking " +
-    "software might interfere with data collection. Therefore, please  " +
-    "disable your ad-blocking software during this study. " +
-    "<b>If we cannot collect your data, we will not be able to reward you for " +
-    "your participation</b>. </p>" +
-    "<p class='instructions'>If you have any question related to this research, please " +
-    "e-mail cedric.batailler@univ-grenoble-alpes.fr.</p>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to start the study.</p>",
+    "<h1 class ='custom-title'> Bienvenue </h1>" +
+    "<p class='instructions'> Nous vous remercions de prendre part à cette étude.<p>" +
+    "<p class='instructions'> Au cours de cette étude, vous serez amené à compléter une tâche. " +
+    "Nous rassemblerons des données concernant la façon dont vous aurez rempli cette tâche, " + 
+    "mais aucune information personnelle permettant de vous identifier ne sera récoltée. </p>" +
+    "<p class='instructions'> Étant donné que pour la récolte des données nous dépendons de " +
+    "fournisseurs de services tiers, il se peut que les logiciels de blocage de publicités (ex. Ad-block) " +
+    "interfère avec la récolte des données. Ainsi, nous vous demandons de bien vouloir désactiver de tels " +
+    "logiciels du temps de cette étude. " +
+    "<b>Si nous ne sommes pas en mesure de récolter vos données, nous ne pourrons pas vous " +
+    "récompenser pour votre participation</b>. </p>" +
+    "<p class='instructions'>Pour toute question au sujet de cette étude, veuillez " +
+    "contacter xxxxx.</p>" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour commencer l'étude.</p>",
   choices: [32]
 };
 
