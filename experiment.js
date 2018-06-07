@@ -385,7 +385,7 @@ var welcome_3 = {
     " If this test fails, please check your Internet connection and make sure you have " +
     " actually disabled your ad-blocking software.</p>" +
     "<p class='instructions'>This test should last less than 5 seconds.</p>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to continue.</p>",
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
 
@@ -448,8 +448,7 @@ var vaast_instructions_1 = {
     "<br>" +
     "<img src = 'media/vaast-background.png'>" +
     "<br>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
-    " continue.</p>",
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer. </p>",
   choices: [32]
 };
 
@@ -466,7 +465,7 @@ var vaast_instructions_2 = {
     "<br>" +
     "<img src = 'media/keyboard-vaastt.png'>" +
     "<br>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to continue.</p>",
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
 
