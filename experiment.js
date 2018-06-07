@@ -437,14 +437,10 @@ var instructions = {
 var vaast_instructions_1 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Task 1 </h1>" +
-    "<p class='instructions'>In the first task, just like in a videogame, you" +
-    " will act within the environment presented below.</p>" +
-    "<p class='instructions'> You will be able to move forward and backward" +
-    " using the arrow keys on your keyboard.</p>" +
-    "<p class='instructions'>Some pictures will appear within the" +
-    " environment and you will have to approach them or avoid them" +
-    " according to the category they belong to.</p>" +
+    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<p class='instructions'>Au cours de cette tâche, comme dans un jeu vidéo, vous serez " +
+    "dans un environnement dans lequel vous pourrez avancer ou reculer. L'environnement " +
+    "dans lequel vous pourrez vous déplacer est présenté ci-dessous.</p>" +
     "<br>" +
     "<img src = 'media/vaast-background.png'>" +
     "<br>" +
