@@ -419,7 +419,7 @@ if(prolific_pid == null) {prolific_pid = "";}
 var prolific_id = {
  type: 'survey-text',
   questions: [{prompt: "You are almost ready. Please confirm your Prolific ID:", value: prolific_pid}],
-  button_label: "Start the study"
+  button_label: "Commencer l'étude"
 };
 
 // Initial instructions -----------------------------------------------------------------
