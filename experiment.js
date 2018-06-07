@@ -451,13 +451,12 @@ var vaast_instructions_1 = {
 var vaast_instructions_2 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Task 1 </h1>" +
-    "<p class='instructions'>In this task, you will have to respond using arrow keys on your " +
-    "keyboard. For every trial, a picture will appear and you will " +
-    "have to press as quickly as possible either the \"approach\" key or the " +
-    "\"avoid\" key (see below).</p>" +
-    "<p class='instructions'>Note: you will have to press the correct key twice " +
-    "to pass the trial.</p>" +
+    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<p class='instructions'>Des mots vous seront présentés dans cette environnement. " +
+    "Votre tâche consistera à avancer ou à reculer en fonction du genre (masculin ou féminin) " +
+    "du mot qui vous sera présenté (des instructions plus précises seront données juste après)." +
+    "<p class='instructions'>Vous pourrez vous déplacer dans l'environnement en utilisant les " +
+    "flèches de votre clavier. </p>" +
     "<br>" +
     "<img src = 'media/keyboard-vaastt.png'>" +
     "<br>" +
