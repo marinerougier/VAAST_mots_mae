@@ -381,10 +381,10 @@ var if_not_enough_time = {
 var welcome_3 = {
   type: "html-keyboard-response",
   stimulus:
-    "<p class='instructions'>We will now proceed to a test of your connection to our server. " +
-    " If this test fails, please check your Internet connection and make sure you have " +
-    " actually disabled your ad-blocking software.</p>" +
-    "<p class='instructions'>This test should last less than 5 seconds.</p>" +
+    "<p class='instructions'>Nous allons maintenant tester votre connexion à notre serveur. " +
+    "En cas d'échec, veuillez vérifier votre connexion internet et vous assurer de bien avoir " +
+    "désactiver vos bloqueurs de publicités.</p>" +
+    "<p class='instructions'>Ce test ne devrait pas prendre plus de 5 secondes.</p>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
