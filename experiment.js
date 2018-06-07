@@ -345,9 +345,9 @@ var welcome = {
 var welcome_2 = {
   type: "html-button-response",
   stimulus:
-  choices: ['I have enough time', 'I do not have enough time'],
     "<p class='instructions'>Avant de continuer, sachez que cette étude devrait prendre " +
     "environ 15 minutes.</p>",
+  choices: ['I do have enough time', 'I do not have enough time'],
 };
 
 var not_enough_time_to_complete = {
