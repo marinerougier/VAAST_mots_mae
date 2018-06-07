@@ -352,7 +352,7 @@ var welcome_2 = {
 
 var not_enough_time_to_complete = {
     type: 'html-button-response',
-    stimulus: '<p>Please come back later to take part in this experiment.</p>',
+    stimulus: '<p>Veuillez revenir plus tard pour réaliser cette étude.</p>',
     choices: ['Go back to Prolific Academic'],
 };
 
