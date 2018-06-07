@@ -468,6 +468,21 @@ var vaast_instructions_3 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
+    "<p class='instructions'>Au début de chaque essai, vous allez voir apparaître au centre de l'écran " +
+    "un point de fixation (+) suivi d'un mot.</p>" +
+    "<p class='instructions'>Votre tâche consistera à vous déplacer vers l'avant " +
+    "ou vers l'arrière en appuyant une seule fois le plus rapidement possible sur " +
+    "la touche \"avancer\" (flèche vers le haut) ou sur la touche \"reculer\" (flèche vers le bas)" +
+    "<p class='instructions'>Merci également d'utiliser uniquement l'index de votre main " +
+    "dominante pour toutes ces actions.</p>" +
+     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
+  choices: [32]
+};
+
+var vaast_instructions_4 = {
+  type: "html-keyboard-response",
+  stimulus:
+    "<h1 class ='custom-title'> Tâche </h1>" +
     "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots féminins (en appuyant " +
     "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots masculins (en appuyant " +
     "sur la flèche vers le bas</strong>." +
@@ -660,7 +675,8 @@ timeline.push(instructions);
 // vaast - instructions
 timeline.push(vaast_instructions_1,
               vaast_instructions_2,
-              vaast_instructions_3);
+              vaast_instructions_3,
+              vaast_instructions_4);
 
 // vaast - blocks
 timeline.push(vaast_training_block,
