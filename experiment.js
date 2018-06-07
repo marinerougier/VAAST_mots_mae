@@ -500,8 +500,6 @@ var vaast_instructions_4 = {
   choices: [13]
 };
 
-
-
 // Creating a trial ---------------------------------------------------------------------
 
 var vaast_fixation = {
