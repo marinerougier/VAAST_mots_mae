@@ -404,8 +404,8 @@ var keen_ping = {
 // Switching to fullscreen --------------------------------------------------------------
 var fullscreen_trial = {
   type: 'fullscreen',
-  message:  '<p>To take part in this study, your browser needs to be set to fullscreen.</p>',
-  button_label: 'Switch to fullscreen',
+  message:  '<p>Pour prendre part à cette étude, votre navigateur doit être mis en plein écran.</p>',
+  button_label: 'Passer en plein écran',
   fullscreen_mode: true
 }
 
