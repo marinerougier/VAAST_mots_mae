@@ -42,10 +42,9 @@ if(!is_compatible) {
     var safari_exclusion = {
         type: "html-keyboard-response",
         stimulus:
-        "<p>Unfortunately, this study is not compatible with your " +
-        "browser.</p>" +
-        "<p>Please reopen this experiment from a supported browser (like " +
-        "Chrome or Firefox).</p>",
+        "<p>Désolé, cette étude n'est pas compatible avec votre navigateur.</p>" +
+        "<p>Veuillez relancer cette page avec un navigateur compatible (ex. " +
+        "Chrome ou Firefox).</p>",
         choices: jsPsych.NO_KEYS
     };
 
