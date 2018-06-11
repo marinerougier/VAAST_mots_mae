@@ -519,8 +519,8 @@ var vaast_start = {
 
 var vaast_fixation = {
   type: 'vaast-fixation',
-  fixation: "+",
-  font_size:  324,
+  fixation: "o",
+  font_size:  46,
   position: 2,
   background_images: background
 }
