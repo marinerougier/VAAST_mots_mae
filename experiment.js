@@ -530,21 +530,6 @@ var vaast_second_step = {
   stimulus: jsPsych.timelineVariable('stimulus'),
   background_images: background,
   font_sizes:  stim_sizes,
-  approach_key: "uparrow",
-  avoidance_key: "downarrow",
-  stim_movement: jsPsych.timelineVariable('movement'),
-  html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
-  force_correct_key_press: true,
-  display_feedback: true,
-  response_ends_trial: true
-}
-
-var vaast_third_step = {
-  type: 'vaast-text',
-  position: next_position,
-  stimulus: jsPsych.timelineVariable('stimulus'),
-  background_images: background,
-  font_sizes:  stim_sizes,
   stim_movement: jsPsych.timelineVariable('movement'),
   response_ends_trial: false,
   trial_duration: 650
@@ -553,7 +538,7 @@ var vaast_third_step = {
 // VAAST training block -----------------------------------------------------------------
 
 var vaast_training_block = {
-  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, vaast_third_step, save_vaast_trial],
+  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   sample: {
     size: 16,
@@ -563,7 +548,7 @@ var vaast_training_block = {
 };
 
 var vaast_test_block = {
-  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, vaast_third_step, save_vaast_trial],
+  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   repetitions: 1,
   randomize_order: true
