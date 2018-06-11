@@ -500,6 +500,22 @@ var vaast_instructions_4 = {
 };
 
 // Creating a trial ---------------------------------------------------------------------
+// Note: vaast_start trial is a dirty hack which uses a regular vaast trial. The correct
+// movement is approach and the key corresponding to approach is "h", thus making the
+// participant press "h" to start the trial. 
+var vaast_start = {
+  type: 'vaast-text',
+  stimulus: "+",
+  position: 2,
+  background_images: background,
+  font_sizes:  stim_sizes,
+  approach_key: "h",
+  stim_movement: "approach",
+  html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
+  force_correct_key_press: true,
+  display_feedback: true,
+  response_ends_trial: true
+}
 
 var vaast_fixation = {
   type: 'vaast-fixation',
@@ -538,7 +554,7 @@ var vaast_second_step = {
 // VAAST training block -----------------------------------------------------------------
 
 var vaast_training_block = {
-  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
+  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   sample: {
     size: 16,
@@ -548,7 +564,7 @@ var vaast_training_block = {
 };
 
 var vaast_test_block = {
-  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
+  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   repetitions: 1,
   randomize_order: true
