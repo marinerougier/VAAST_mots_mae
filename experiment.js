@@ -69,11 +69,6 @@ if(!is_compatible) {
 var vaast_1st_block = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
 
 var jspsych_id  = jsPsych.randomization.randomID();
-var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
-
-// check if URL prolific_pid exists and set prolific_pid to "" if it does not
-
-if(prolific_pid == null) {prolific_pid = "";}
 
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
@@ -248,8 +243,6 @@ var next_position = function(){
 // init ---------------------------------------------------------------------------------
 var saving_id = function(){
 
-  prolific_id = jsPsych.data.getDataByTimelineNode("0.0-6.0").values()[0].responses.slice(7, -2);
-
   KeenAsync.ready(function(){
     var client = new KeenAsync({
       projectId: stream_projectID,
@@ -258,7 +251,6 @@ var saving_id = function(){
     if(data_stream) {
       client.recordEvent('prolific_id_stream', {
         session_id: jspsych_id,
-        prolific_id: prolific_id,
         "user_agent": "${keen.user_agent}",
         "keen": {
           "addons": [{
@@ -284,7 +276,6 @@ var saving_vaast_trial = function(){
     if(data_stream) {
       client.recordEvent('vaast_stream', {
         session_id: jspsych_id,
-        prolific_id: prolific_id,
         vaast_trial_data: jsPsych.data.get().last(3).json()
       });
     }
@@ -408,18 +399,6 @@ var fullscreen_trial = {
   button_label: 'Passer en plein écran',
   fullscreen_mode: true
 }
-
-
-// Prolific identification --------------------------------------------------------------
-var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
-
-if(prolific_pid == null) {prolific_pid = "";}
-
-var prolific_id = {
- type: 'survey-text',
-  questions: [{prompt: "You are almost ready. Please confirm your Prolific ID:", value: prolific_pid}],
-  button_label: "Commencer l'étude"
-};
 
 // Initial instructions -----------------------------------------------------------------
 // First slide --------------------------------------------------------------------------
@@ -664,8 +643,7 @@ timeline.push(keen_ping);
 timeline.push(fullscreen_trial);
 
 // prolific verification
-timeline.push(prolific_id,
-              save_id);
+timeline.push(save_id);
 
 // initial instructions
 timeline.push(instructions);
