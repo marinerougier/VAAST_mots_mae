@@ -500,11 +500,27 @@ var vaast_instructions_4 = {
 };
 
 // Creating a trial ---------------------------------------------------------------------
+// Note: vaast_start trial is a dirty hack which uses a regular vaast trial. The correct
+// movement is approach and the key corresponding to approach is "h", thus making the
+// participant press "h" to start the trial. 
+var vaast_start = {
+  type: 'vaast-text',
+  stimulus: "+",
+  position: 2,
+  background_images: background,
+  font_sizes:  stim_sizes,
+  approach_key: "h",
+  stim_movement: "approach",
+  html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
+  force_correct_key_press: true,
+  display_feedback: true,
+  response_ends_trial: true
+}
 
 var vaast_fixation = {
   type: 'vaast-fixation',
-  fixation: "+",
-  font_size:  324,
+  fixation: "o",
+  font_size:  46,
   position: 2,
   background_images: background
 }
@@ -515,8 +531,8 @@ var vaast_first_step = {
   position: 2,
   background_images: background,
   font_sizes:  stim_sizes,
-  approach_key: "uparrow",
-  avoidance_key: "downarrow",
+  approach_key: "y",
+  avoidance_key: "n",
   stim_movement: jsPsych.timelineVariable('movement'),
   html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
   force_correct_key_press: true,
@@ -530,21 +546,6 @@ var vaast_second_step = {
   stimulus: jsPsych.timelineVariable('stimulus'),
   background_images: background,
   font_sizes:  stim_sizes,
-  approach_key: "uparrow",
-  avoidance_key: "downarrow",
-  stim_movement: jsPsych.timelineVariable('movement'),
-  html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
-  force_correct_key_press: true,
-  display_feedback: true,
-  response_ends_trial: true
-}
-
-var vaast_third_step = {
-  type: 'vaast-text',
-  position: next_position,
-  stimulus: jsPsych.timelineVariable('stimulus'),
-  background_images: background,
-  font_sizes:  stim_sizes,
   stim_movement: jsPsych.timelineVariable('movement'),
   response_ends_trial: false,
   trial_duration: 650
@@ -553,7 +554,7 @@ var vaast_third_step = {
 // VAAST training block -----------------------------------------------------------------
 
 var vaast_training_block = {
-  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, vaast_third_step, save_vaast_trial],
+  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   sample: {
     size: 16,
@@ -563,7 +564,7 @@ var vaast_training_block = {
 };
 
 var vaast_test_block = {
-  timeline: [vaast_fixation, vaast_first_step, vaast_second_step, vaast_third_step, save_vaast_trial],
+  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   repetitions: 1,
   randomize_order: true
