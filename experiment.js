@@ -66,7 +66,7 @@ if(!is_compatible) {
 // Variable input -----------------------------------------------------------------------
 // Variable used to define experimental condition.
 
-var vaast_1st_block = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
+var vaast_instructions = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
 
 var jspsych_id  = jsPsych.randomization.randomID();
 var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
@@ -78,37 +78,24 @@ if(prolific_pid == null) {prolific_pid = "";}
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
 
-var movement_mas_block1 = undefined;
-var movement_fem_block1 = undefined;
-var movement_mas_block2 = undefined;
-var movement_fem_block2 = undefined;
+var movement_masc = undefined;
+var movement_fem = undefined;
+var gender_to_approach = undefined;
+var gender_to_avoid = undefined;
 
-var block1_approach_cat = undefined;
-var block1_avoidanc_cat = undefined;
-var block1_approach_cat = undefined;
-var block2_avoidanc_cat = undefined;
-
-switch(vaast_1st_block) {
+switch(vaast_instructions) {
   case "approach_masc":
-    movement_mas_block1 = undefined;
-    movement_fem_block1 = undefined;
-    movement_mas_block2 = undefined;
-    movement_fem_block2 = undefined;
-    block1_approach_cat = undefined;
-    block1_avoidanc_cat = undefined;
-    block1_approach_cat = undefined;
-    block2_avoidanc_cat = undefined;
+    movement_masc = "approach";
+    movement_fem = "avoidance";
+    gender_to_approach = "masculins";
+    gender_to_avoid = "féminins";
     break;
 
   case "approach_fem":
-    movement_mas_block1 = undefined;
-    movement_fem_block1 = undefined;
-    movement_mas_block2 = undefined;
-    movement_fem_block2 = undefined;
-    block1_approach_cat = undefined;
-    block1_avoidanc_cat = undefined;
-    block1_approach_cat = undefined;
-    block2_avoidanc_cat = undefined;
+    movement_masc = "avoidance";
+    movement_fem = "approach";
+    gender_to_approach = "féminins";
+    gender_to_avoid = "masculins";
     break;
 }
 
@@ -482,8 +469,8 @@ var vaast_instructions_4 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
-    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots féminins (en appuyant " +
-    "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots masculins (en appuyant " +
+    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant " +
+    "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant " +
     "sur la flèche vers le bas</strong>." +
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
