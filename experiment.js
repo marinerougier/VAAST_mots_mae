@@ -347,7 +347,7 @@ var welcome_2 = {
   stimulus:
     "<p class='instructions'>Avant de continuer, sachez que cette étude devrait prendre " +
     "environ 15 minutes.</p>",
-  choices: ['I do have enough time', 'I do not have enough time'],
+  choices: ['J\'ai le temps', 'Je n\'ai pas le temps'],
 };
 
 var not_enough_time_to_complete = {
