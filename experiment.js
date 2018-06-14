@@ -274,7 +274,7 @@ var saving_vaast_trial = function(){
       writeKey: stream_writeKey
     });
     if(data_stream) {
-      client.recordEvent('vaast_stream', {
+      client.recordEvent('stream_vaast_trial', {
         session_id: jspsych_id,
         vaast_trial_data: jsPsych.data.get().last(3).json()
       });
@@ -290,7 +290,7 @@ var saving_browser_events = function(completion) {
         writeKey: stream_writeKey
       });
       if(data_stream) {
-        client.recordEvent('meta_info_stream', {
+        client.recordEvent('stream_browser_event', {
           session_id: jspsych_id,
           event_data: jsPsych.data.getInteractionData().json(),
           completion: completion
@@ -384,7 +384,7 @@ var welcome_3 = {
 var keen_ping = {
     type: 'keen-ping',
     loader_image: 'media/loading.gif',
-    stream_name: 'ping_stream',
+    stream_name: 'stream_ping',
     write_key: stream_writeKey,
     project_id: stream_projectID,
     session_id: jspsych_id,
