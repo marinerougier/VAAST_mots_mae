@@ -66,7 +66,7 @@ if(!is_compatible) {
 // Variable input -----------------------------------------------------------------------
 // Variable used to define experimental condition.
 
-var vaast_1st_block = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
+var vaast_instructions = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
 
 var jspsych_id  = jsPsych.randomization.randomID();
 var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
@@ -78,37 +78,24 @@ if(prolific_pid == null) {prolific_pid = "";}
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
 
-var movement_mas_block1 = undefined;
-var movement_fem_block1 = undefined;
-var movement_mas_block2 = undefined;
-var movement_fem_block2 = undefined;
+var movement_masc = undefined;
+var movement_fem = undefined;
+var gender_to_approach = undefined;
+var gender_to_avoid = undefined;
 
-var block1_approach_cat = undefined;
-var block1_avoidanc_cat = undefined;
-var block1_approach_cat = undefined;
-var block2_avoidanc_cat = undefined;
-
-switch(vaast_1st_block) {
+switch(vaast_instructions) {
   case "approach_masc":
-    movement_mas_block1 = undefined;
-    movement_fem_block1 = undefined;
-    movement_mas_block2 = undefined;
-    movement_fem_block2 = undefined;
-    block1_approach_cat = undefined;
-    block1_avoidanc_cat = undefined;
-    block1_approach_cat = undefined;
-    block2_avoidanc_cat = undefined;
+    movement_masc = "approach";
+    movement_fem = "avoidance";
+    gender_to_approach = "masculins";
+    gender_to_avoid = "féminins";
     break;
 
   case "approach_fem":
-    movement_mas_block1 = undefined;
-    movement_fem_block1 = undefined;
-    movement_mas_block2 = undefined;
-    movement_fem_block2 = undefined;
-    block1_approach_cat = undefined;
-    block1_avoidanc_cat = undefined;
-    block1_approach_cat = undefined;
-    block2_avoidanc_cat = undefined;
+    movement_masc = "avoidance";
+    movement_fem = "approach";
+    gender_to_approach = "féminins";
+    gender_to_avoid = "masculins";
     break;
 }
 
@@ -117,86 +104,86 @@ switch(vaast_1st_block) {
 // TODO : choose movement
 
 var vaast_stim = [
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "accomplissement"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "anniversaire"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "avantage"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "bébé"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "bonheur"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "cadeau"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "câlin"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "charme"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "diplôme"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "espoir"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "humour"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "mariage"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "partage"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "plaisir"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "remerciement"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "rire"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "soleil"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "sourire"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "succès"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "positif", stimulus: "triomphe"},
-  {category: "", movement: "approach",  genre: "feminin" , valence: "positif", stimulus: "amitié"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "fête"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "fleur"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "gloire"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "grandeur"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "joie"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "justice"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "lumière"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "naissance"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "paix"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "passion"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "plage"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "prairie"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "promotion"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "prospérité"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "réussite"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "santé"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "satisfaction"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "sérénité"},
-  {category: "", movement: "approach",  genre: "feminin",  valence: "positif", stimulus: "vacances"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "abandon"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "accident"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "attentat"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "bruit"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "cadavre"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "cancer"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "cercueil"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "couteau"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "danger"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "divorce"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "doute"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "échec"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "enterrement"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "étouffement"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "handicap"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "malheur"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "meurtre"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "poison"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "rejet"},
-  {category: "", movement: "avoidance", genre: "masculin", valence: "negatif", stimulus: "suicide"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "arme"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "blessure"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "bombe"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "douleur"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "erreur"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "fusillade"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "guerre"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "larmes"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "maladie"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "malchance"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "misère"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "mort"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "noyade"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "obscurité"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "ombre"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "panique"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "paresse"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "tombe"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "tumeur"},
-  {category: "", movement: "approach", genre: "feminin",  valence: "negatif", stimulus: "torture"}
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "accomplissement"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "anniversaire"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "avantage"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "bébé"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "bonheur"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "cadeau"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "câlin"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "charme"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "diplôme"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "espoir"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "humour"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "mariage"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "partage"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "plaisir"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "remerciement"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "rire"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "soleil"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "sourire"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "succès"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "positif", stimulus: "triomphe"},
+  {category: "", movement: movement_fem,  genre: "feminin" , valence: "positif", stimulus: "amitié"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "fête"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "fleur"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "gloire"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "grandeur"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "joie"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "justice"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "lumière"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "naissance"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "paix"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "passion"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "plage"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "prairie"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "promotion"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "prospérité"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "réussite"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "santé"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "satisfaction"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "sérénité"},
+  {category: "", movement: movement_fem,  genre: "feminin",  valence: "positif", stimulus: "vacances"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "abandon"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "accident"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "attentat"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "bruit"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "cadavre"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "cancer"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "cercueil"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "couteau"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "danger"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "divorce"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "doute"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "échec"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "enterrement"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "étouffement"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "handicap"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "malheur"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "meurtre"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "poison"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "rejet"},
+  {category: "", movement: movement_masc, genre: "masculin", valence: "negatif", stimulus: "suicide"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "arme"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "blessure"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "bombe"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "douleur"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "erreur"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "fusillade"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "guerre"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "larmes"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "maladie"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "malchance"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "misère"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "mort"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "noyade"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "obscurité"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "ombre"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "panique"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "paresse"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "tombe"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "tumeur"},
+  {category: "", movement: movement_fem, genre: "feminin",  valence: "negatif", stimulus: "torture"}
 ];
 
 // vaast background images --------------------------------------------------------------,
@@ -482,8 +469,8 @@ var vaast_instructions_4 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
-    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots féminins (en appuyant " +
-    "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots masculins (en appuyant " +
+    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant " +
+    "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant " +
     "sur la flèche vers le bas</strong>." +
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
