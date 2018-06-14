@@ -442,7 +442,7 @@ var vaast_instructions_2 = {
     "Votre tâche consistera à avancer ou à reculer en fonction du genre (masculin ou féminin) " +
     "du mot qui vous sera présenté (des instructions plus précises seront données juste après)." +
     "<p class='instructions'>Vous pourrez vous déplacer dans l'environnement en utilisant les " +
-    "flèches de votre clavier. </p>" +
+    "touches Y, H et N de votre clavier. </p>" +
     "<br>" +
     "<img src = 'media/keyboard-vaastt.png'>" +
     "<br>" +
@@ -458,7 +458,7 @@ var vaast_instructions_3 = {
     "un point de fixation (+) suivi d'un mot.</p>" +
     "<p class='instructions'>Votre tâche consistera à vous déplacer vers l'avant " +
     "ou vers l'arrière en appuyant une seule fois le plus rapidement possible sur " +
-    "la touche \"avancer\" (flèche vers le haut) ou sur la touche \"reculer\" (flèche vers le bas)" +
+    "la touche \"avancer\" (Y) ou sur la touche \"reculer\" (N)." +
     "<p class='instructions'>Merci également d'utiliser uniquement l'index de votre main " +
     "dominante pour toutes ces actions.</p>" +
      "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
@@ -470,8 +470,9 @@ var vaast_instructions_4 = {
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
     "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant " +
-    "sur la flèche vers le haut)</strong> et vous <strong>ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant " +
-    "sur la flèche vers le bas</strong>." +
+    "sur Y)</strong> et vous <strong>ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant " +
+    "sur N</strong>." +
+
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
     "<strong>le plus rapidement et le plus exactement possible</strong>." +
