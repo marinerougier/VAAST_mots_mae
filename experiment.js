@@ -530,6 +530,12 @@ var vaast_training_block = {
     type: 'without-replacement',
   },
   randomize_order: true,
+  data: {
+    phase:    "training",
+    stimulus: jsPsych.timelineVariable('stimulus'),
+    movement: jsPsych.timelineVariable('movement'),
+    gender:   jsPsych.timelineVariable('gender'),
+  }
 };
 
 var vaast_test_block = {
