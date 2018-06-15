@@ -238,6 +238,7 @@ var saving_id = function(){
     if(data_stream) {
       client.recordEvent('prolific_id_stream', {
         session_id: jspsych_id,
+        experimental_condition: vaast_instructions,
         "user_agent": "${keen.user_agent}",
         "keen": {
           "addons": [{
@@ -263,6 +264,7 @@ var saving_vaast_trial = function(){
     if(data_stream) {
       client.recordEvent('stream_vaast_trial', {
         session_id: jspsych_id,
+        experimental_condition: vaast_instructions,
         vaast_trial_data: jsPsych.data.get().last(3).json()
       });
     }
