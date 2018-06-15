@@ -544,7 +544,7 @@ var vaast_training_block = {
   timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   sample: {
-    size: 16,
+    size: 8,
     type: 'without-replacement',
   },
   randomize_order: true,
