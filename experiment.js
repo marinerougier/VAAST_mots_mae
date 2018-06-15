@@ -236,7 +236,7 @@ var saving_id = function(){
       writeKey: stream_writeKey,
     });
     if(data_stream) {
-      client.recordEvent('prolific_id_stream', {
+      client.recordEvent('stream_browser_info', {
         session_id: jspsych_id,
         experimental_condition: vaast_instructions,
         "user_agent": "${keen.user_agent}",
