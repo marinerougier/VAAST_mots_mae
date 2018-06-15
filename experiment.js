@@ -546,7 +546,13 @@ var vaast_test_block = {
   timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   repetitions: 1,
-  randomize_order: true
+  randomize_order: true,
+  data: {
+    phase:    "test",
+    stimulus: jsPsych.timelineVariable('stimulus'),
+    movement: jsPsych.timelineVariable('movement'),
+    gender:   jsPsych.timelineVariable('genre'),
+  }
 };
 
 var vaast_instructions_5 = {
