@@ -569,19 +569,6 @@ var vaast_test_block = {
   }
 };
 
-var vaast_block_instructions = function(n)  {
-  var n_prev = n - 1;
-
-  var block_instructions = {
-    type: "html-keyboard-response",
-    stimulus:
-      "<p>The block n°" + n_prev +" is over. " +
-      "<p class = 'continue-instructions'>Press <strong>space</strong> to start block n°"+ n +".</p>",
-    choices: [32]
-  };
-
-  return(block_instructions)
-}
 
 // end fullscreen -----------------------------------------------------------------------
 
