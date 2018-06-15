@@ -69,11 +69,6 @@ if(!is_compatible) {
 var vaast_instructions = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
 
 var jspsych_id  = jsPsych.randomization.randomID();
-var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
-
-// check if URL prolific_pid exists and set prolific_pid to "" if it does not
-
-if(prolific_pid == null) {prolific_pid = "";}
 
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
@@ -235,8 +230,6 @@ var next_position = function(){
 // init ---------------------------------------------------------------------------------
 var saving_id = function(){
 
-  prolific_id = jsPsych.data.getDataByTimelineNode("0.0-6.0").values()[0].responses.slice(7, -2);
-
   KeenAsync.ready(function(){
     var client = new KeenAsync({
       projectId: stream_projectID,
@@ -245,7 +238,6 @@ var saving_id = function(){
     if(data_stream) {
       client.recordEvent('prolific_id_stream', {
         session_id: jspsych_id,
-        prolific_id: prolific_id,
         "user_agent": "${keen.user_agent}",
         "keen": {
           "addons": [{
@@ -269,9 +261,8 @@ var saving_vaast_trial = function(){
       writeKey: stream_writeKey
     });
     if(data_stream) {
-      client.recordEvent('vaast_stream', {
+      client.recordEvent('stream_vaast_trial', {
         session_id: jspsych_id,
-        prolific_id: prolific_id,
         vaast_trial_data: jsPsych.data.get().last(3).json()
       });
     }
@@ -286,7 +277,7 @@ var saving_browser_events = function(completion) {
         writeKey: stream_writeKey
       });
       if(data_stream) {
-        client.recordEvent('meta_info_stream', {
+        client.recordEvent('stream_browser_event', {
           session_id: jspsych_id,
           event_data: jsPsych.data.getInteractionData().json(),
           completion: completion
@@ -380,7 +371,7 @@ var welcome_3 = {
 var keen_ping = {
     type: 'keen-ping',
     loader_image: 'media/loading.gif',
-    stream_name: 'ping_stream',
+    stream_name: 'stream_ping',
     write_key: stream_writeKey,
     project_id: stream_projectID,
     session_id: jspsych_id,
@@ -395,18 +386,6 @@ var fullscreen_trial = {
   button_label: 'Passer en plein écran',
   fullscreen_mode: true
 }
-
-
-// Prolific identification --------------------------------------------------------------
-var prolific_pid = jsPsych.data.getURLVariable('PROLIFIC_PID');
-
-if(prolific_pid == null) {prolific_pid = "";}
-
-var prolific_id = {
- type: 'survey-text',
-  questions: [{prompt: "You are almost ready. Please confirm your Prolific ID:", value: prolific_pid}],
-  button_label: "Commencer l'étude"
-};
 
 // Initial instructions -----------------------------------------------------------------
 // First slide --------------------------------------------------------------------------
@@ -555,7 +534,13 @@ var vaast_test_block = {
   timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
   timeline_variables: vaast_stim,
   repetitions: 1,
-  randomize_order: true
+  randomize_order: true,
+  data: {
+    phase:    "test",
+    stimulus: jsPsych.timelineVariable('stimulus'),
+    movement: jsPsych.timelineVariable('movement'),
+    gender:   jsPsych.timelineVariable('genre'),
+  }
 };
 
 var vaast_instructions_5 = {
@@ -652,8 +637,7 @@ timeline.push(keen_ping);
 timeline.push(fullscreen_trial);
 
 // prolific verification
-timeline.push(prolific_id,
-              save_id);
+timeline.push(save_id);
 
 // initial instructions
 timeline.push(instructions);
