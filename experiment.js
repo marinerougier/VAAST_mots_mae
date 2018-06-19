@@ -468,7 +468,8 @@ var vaast_instructions_3 = {
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
     "<p class='instructions'>Au début de chaque essai, vous allez voir apparaître au centre de l'écran " +
-    "un point de fixation (+) suivi d'un mot.</p>" +
+    "un point de fixation (+). Vous allez alors voir apparaître au centre de l'écran le symbole \"O\", " +
+    " suivi d'un mot.</p>" +
     "<p class='instructions'>Votre tâche consistera à vous déplacer vers l'avant " +
     "ou vers l'arrière en appuyant une seule fois le plus rapidement possible sur " +
     "la touche \"avancer\" (flèche vers le haut) ou sur la touche \"reculer\" (flèche vers le bas)" +
@@ -494,7 +495,7 @@ var vaast_instructions_4 = {
          "<th>Avoid</th>" +
        "</tr>" +
      "</table>" +
-    "<p class = 'continue-instructions'>Appuyez sur <strong>entrer</strong> pour" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>entrer</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
 };
