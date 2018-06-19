@@ -596,6 +596,47 @@ var vaast_block_instructions = function(n)  {
   return(block_instructions)
 }
 
+// Demographic block ---------------------------------------------------------------------
+// Demographic variables
+var mcq_sexe_options = ["Hommme", "Femme"];
+var mcq_handedness_options = ["Droitier(e)", "Gaucher(e)"];
+var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt bon", "Moyen", "Plutôt mauvais", "Plutôt très mauvais"];
+
+// ---------------------------------------------------------------------------------------
+var infographic_data_0 = {
+  type: 'html-keyboard-response',
+  stimulus:
+    "<p>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
+    "concernant : votre âge, votre sexe, votre latéralité, et votre niveau de maîtrise de la " +
+    "langue française. </p>" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
+  choices: [32]
+};
+
+var infographic_data_1 = {
+  type: 'survey-text',
+  questions: [{prompt: "Quel âge avez-vous ?"}],
+  button_label: "Passer à la question suivante"
+};
+
+var infographic_data_2 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Quel est votre sexe ?", options: mcq_sexe_options}],
+  button_label: "Passer à la question suivante"
+};
+
+var infographic_data_3 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Quel est votre latéralité ?", options: mcq_handedness_options}],
+  button_label: "Passer à la question suivante"
+};
+
+var infographic_data_4 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Quel est votre niveau de français ?", options: mcq_frenchLvl_options}],
+  button_label: "Passer à la suite"
+};
+
 var vaast_instructions_6 = {
   type: "html-keyboard-response",
   stimulus:
@@ -703,11 +744,17 @@ timeline.push(vaast_training_block,
 // vaast - end
 timeline.push(vaast_instructions_6);
 
+// demographic info
+timeline.push(infographic_data_0,
+              infographic_data_1,
+              infographic_data_2,
+              infographic_data_3,
+              infographic_data_4);
+
 // ending
 timeline.push(fullscreen_trial_exit);
 timeline.push(ending,
               ending_2);
-
 // Launch experiment --------------------------------------------------------------------
 // preloading ---------------------------------------------------------------------------
 // Preloading. For some reason, it appears auto-preloading fails, so using it manually.
