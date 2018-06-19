@@ -66,16 +66,16 @@ jsPsych.plugins["keen-ping"] = (function() {
           if (err) {
             new_html =
             '<div id="jspsych-html-keyboard-response-stimulus">' +
-              'Could not establish a connection to our servers.<br />' +
-              'Please disable your ad blocker and refresh this page.' +
+              'Nous n\'avons pas pu établir la connexion.<br />' +
+              'Merci de désactiver votre bloqueur de publicité puis rafraichir la page.' +
             '</div>';
             display_element.innerHTML = new_html;
           }
           else {
             new_html =
             '<div id="jspsych-html-keyboard-response-stimulus">' +
-            '<p><i class="fas fa-check"></i> Connection established.</p>' +
-            "<p class='continue-instructions'>Press <span class='key'>space</span> to continue. </p>" +
+            '<p><i class="fas fa-check"></i> Connexion établie.</p>' +
+            "<p class='continue-instructions'>Appuyez sur <span class='key'>espace</span> pour continuer. </p>" +
             '</div>';
             display_element.innerHTML = new_html;
 
