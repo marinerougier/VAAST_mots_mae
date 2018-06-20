@@ -207,7 +207,7 @@ var stim_sizes = [
 // Compute next position as function of current position and correct movement. Because
 // participant have to press the correct response key, it always shows the correct
 // position.
-var next_position = function(){
+var next_position_training = function(){
   var current_position = jsPsych.data.getLastTrialData().values()[0].position;
   var current_movement = jsPsych.data.getLastTrialData().values()[0].movement;
   var position = current_position;
@@ -217,6 +217,26 @@ var next_position = function(){
   }
 
   if(current_movement == "avoidance") {
+    position = position -1;
+  }
+
+  return(position)
+}
+
+var next_position = function(){
+  var current_position = jsPsych.data.getLastTrialData().values()[0].position;
+  var last_keypress = jsPsych.data.getLastTrialData().values()[0].key_press;
+
+  var approach_key = jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y');
+  var avoidance_key = jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n');
+
+  var position = current_position;
+
+  if(last_keypress == approach_key) {
+    position = position + 1;
+  }
+
+  if(last_keypress == avoidance_key) {
     position = position -1;
   }
 
@@ -513,7 +533,7 @@ var vaast_fixation = {
   background_images: background
 }
 
-var vaast_first_step = {
+var vaast_first_step_training = {
   type: 'vaast-text',
   stimulus: jsPsych.timelineVariable('stimulus'),
   position: 2,
@@ -525,6 +545,32 @@ var vaast_first_step = {
   html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
   force_correct_key_press: true,
   display_feedback: true,
+  response_ends_trial: true
+}
+
+var vaast_second_step_training = {
+  type: 'vaast-text',
+  position: next_position_training,
+  stimulus: jsPsych.timelineVariable('stimulus'),
+  background_images: background,
+  font_sizes:  stim_sizes,
+  stim_movement: jsPsych.timelineVariable('movement'),
+  response_ends_trial: false,
+  trial_duration: 650
+}
+
+var vaast_first_step = {
+  type: 'vaast-text',
+  stimulus: jsPsych.timelineVariable('stimulus'),
+  position: 2,
+  background_images: background,
+  font_sizes:  stim_sizes,
+  approach_key: "y",
+  avoidance_key: "n",
+  stim_movement: jsPsych.timelineVariable('movement'),
+  html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
+  force_correct_key_press: false,
+  display_feedback: false,
   response_ends_trial: true
 }
 
@@ -542,7 +588,13 @@ var vaast_second_step = {
 // VAAST training block -----------------------------------------------------------------
 
 var vaast_training_block = {
-  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
+  timeline: [
+    vaast_start,
+    vaast_fixation,
+    vaast_first_step_training,
+    vaast_second_step_training,
+    save_vaast_trial
+  ],
   timeline_variables: vaast_stim,
   sample: {
     size: 8,
@@ -558,7 +610,13 @@ var vaast_training_block = {
 };
 
 var vaast_test_block = {
-  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
+  timeline: [
+    vaast_start,
+    vaast_fixation,
+    vaast_first_step,
+    vaast_second_step,
+    save_vaast_trial
+  ],
   timeline_variables: vaast_stim,
   repetitions: 1,
   randomize_order: true,
