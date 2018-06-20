@@ -191,10 +191,7 @@
               valid_responses: trial.key_to_move_forward
             });}
            } else if(trial.response_ends_trial && trial.display_feedback != true) {
-            var keyListener = jsPsych.pluginAPI.getKeyboardResponse({
-              callback_function: end_trial,
-              valid_responses: [jsPsych.ALL_KEYS]
-            });
+            end_trial();
           } else if(!trial.response_ends_trial && trial.display_feedback != true) {
 
           }
@@ -223,10 +220,7 @@
               valid_responses: trial.key_to_move_forward
             });}
           } else if(trial.response_ends_trial && trial.display_feedback != true) {
-            var keyListener = jsPsych.pluginAPI.getKeyboardResponse({
-              callback_function: end_trial,
-              valid_responses: [jsPsych.ALL_KEYS]
-            });
+            end_trial();
           } else if(!trial.response_ends_trial && trial.display_feedback != true) {
 
           }
