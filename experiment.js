@@ -166,7 +166,7 @@ var vaast_stim = [
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "erreur"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "fusillade"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "guerre"},
-  {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "larmes"},
+  {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "larme"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "maladie"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "malchance"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "misère"},
