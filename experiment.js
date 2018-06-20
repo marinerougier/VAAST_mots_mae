@@ -378,7 +378,7 @@ var welcome_3 = {
     "En cas d'échec, veuillez vérifier votre connexion internet et vous assurer de bien avoir " +
     "désactiver vos bloqueurs de publicités.</p>" +
     "<p class='instructions'>Ce test ne devrait pas prendre plus de 5 secondes.</p>" +
-    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
+    "<p class ='continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
 
@@ -473,6 +473,15 @@ var vaast_instructions_4 = {
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
     "<strong>le plus rapidement et le plus exactement possible</strong>." +
+    "<p class ='instructions'>Vous allez commencer par une phase d'entraînement.</p>" +
+    "<p class ='instructions'><u>ATTENTION</u> : nous vous signalerons vos erreurs uniquement " +
+    "dans la phase d'entraînement, donc relisez et mémorisez bien les consignes ci-dessus." +
+     "<table align='center' class='vaast-table-instruction'>" +
+       "<tr>" +
+         "<th>Approach</th>" +
+         "<th>Avoid</th>" +
+       "</tr>" +
+     "</table>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>entrée</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
@@ -482,12 +491,19 @@ var vaast_instructions_4 = {
 var vaast_instructions_5 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Task 1 </h1>" +
-    "<p class='instructions'>The training block is now over. </p>" +
-    "<p class='instructions'>You will now have to repeat this task for 10 new blocks." +
-    " The instructions are the same as in the block you just completed." +
-    "</p>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to start block n°1.</p>",
+    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<p class='instructions'>L'entraînement est maintenant terminé. </p>" +
+    "<p class='instructions'><u>ATTENTION</u> : vous n'aurez plus de messages pour signaler vos erreurs.</p>" +
+    "<p class='instructions'>Donc rappelez-vous bien, vous devez :</p>" +
+    "<ul class='instructions'>" +
+     "<li>" +
+      "<strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant sur Y)</strong>" +
+     "</li>" +
+     "<li>" +
+      "<strong>VOUS ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant sur N)</strong>" +
+     "</li>" +
+    "</ul>" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour commencer la tâche.</p>",
   choices: [32]
 };
 
@@ -756,7 +772,8 @@ timeline.push(instructions);
 timeline.push(vaast_instructions_1,
               vaast_instructions_2,
               vaast_instructions_3,
-              vaast_instructions_4);
+              vaast_instructions_4,
+              vaast_instructions_5);
 
 // vaast - blocks
 timeline.push(vaast_training_block,
