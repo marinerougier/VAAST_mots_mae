@@ -116,3 +116,40 @@ browser_event_tidy <-
 
 browser_event_tidy %>% 
   write_csv("data/browser_event_dataset.csv")
+
+
+# demographics ------------------------------------------------------------
+demographics_raw   <- 
+  keen_client$extraction(event_collection = "stream_demographics",
+                         timeframe        = "this_month")
+
+questions <-
+  tribble(~question_id, ~question,
+          1L, "age",
+          2L, "sex",
+          3L, "handedness",
+          4L, "language")
+
+demographics_tidy <-
+  demographics_raw %>% 
+  map_df(~data_frame(participant_id   = .x$session_id,
+                     demographics_raw = .x$demographics_data)) %>% 
+  mutate(demogrphics_data = map(demographics_raw, ~fromJSON(.x))) %>% 
+  unnest() %>%
+  select(participant_id,
+         time_elapsed,
+         responses) %>% 
+  mutate(response = map(responses, ~fromJSON(.x))) %>% 
+  select(-responses) %>% 
+  # I don't really know why we have to call unnest twice, but it works.
+  unnest() %>% 
+  unnest() %>% 
+  group_by(participant_id) %>% 
+  mutate(question_id = row_number()) %>% 
+  ungroup() %>% 
+  left_join(questions) %>% 
+  reshape2::dcast(participant_id ~ question,
+                  value.var = "response")
+
+demographics_tidy %>% 
+  write_csv("data/demographics_dataset.csv")

@@ -285,6 +285,23 @@ var saving_vaast_trial = function(){
   });
 }
 
+// demographic logging ------------------------------------------------------------------
+var saving_demographics = function(){
+  KeenAsync.ready(function(){
+    var client = new KeenAsync({
+      projectId: stream_projectID,
+      writeKey: stream_writeKey
+    });
+    if(data_stream) {
+      client.recordEvent('stream_demographics', {
+        session_id: jspsych_id,
+        experimental_condition: vaast_instructions,
+        demographics_data: jsPsych.data.get().last(4).json()
+      });
+    }
+  });
+}
+
 // iat trial ----------------------------------------------------------------------------
 var saving_browser_events = function(completion) {
   KeenAsync.ready(function(){
@@ -312,7 +329,10 @@ var save_vaast_trial = {
     func: saving_vaast_trial
 }
 
-
+var save_demographics = {
+    type: 'call-function',
+    func: saving_demographics
+}
 // EXPERIMENT ---------------------------------------------------------------------------
 // initial instructions -----------------------------------------------------------------
 var welcome = {
@@ -666,11 +686,11 @@ var vaast_block_instructions = function(n)  {
 // Demographic block ---------------------------------------------------------------------
 // Demographic variables
 var mcq_sexe_options = ["Hommme", "Femme"];
-var mcq_handedness_options = ["Droitier(e)", "Gaucher(e)"];
+var mcq_handedness_options = ["Droitier·e", "Gaucher·e"];
 var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt bon", "Moyen", "Plutôt mauvais", "Plutôt très mauvais"];
 
 // ---------------------------------------------------------------------------------------
-var infographic_data_0 = {
+var demographic_data_0 = {
   type: 'html-keyboard-response',
   stimulus:
     "<p>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
@@ -680,25 +700,25 @@ var infographic_data_0 = {
   choices: [32]
 };
 
-var infographic_data_1 = {
+var demographic_data_1 = {
   type: 'survey-text',
   questions: [{prompt: "Quel âge avez-vous ?"}],
   button_label: "Passer à la question suivante"
 };
 
-var infographic_data_2 = {
+var demographic_data_2 = {
   type: 'survey-multi-choice',
   questions: [{prompt : "Quel est votre sexe ?", options: mcq_sexe_options}],
   button_label: "Passer à la question suivante"
 };
 
-var infographic_data_3 = {
+var demographic_data_3 = {
   type: 'survey-multi-choice',
   questions: [{prompt : "Quel est votre latéralité ?", options: mcq_handedness_options}],
   button_label: "Passer à la question suivante"
 };
 
-var infographic_data_4 = {
+var demographic_data_4 = {
   type: 'survey-multi-choice',
   questions: [{prompt : "Quel est votre niveau de français ?", options: mcq_frenchLvl_options}],
   button_label: "Passer à la suite"
@@ -784,11 +804,12 @@ timeline.push(vaast_training_block,
 timeline.push(vaast_instructions_6);
 
 // demographic info
-timeline.push(infographic_data_0,
-              infographic_data_1,
-              infographic_data_2,
-              infographic_data_3,
-              infographic_data_4);
+timeline.push(demographic_data_0,
+              demographic_data_1,
+              demographic_data_2,
+              demographic_data_3,
+              demographic_data_4,
+              save_demographics);
 
 // ending
 timeline.push(fullscreen_trial_exit);
