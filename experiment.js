@@ -670,7 +670,7 @@ var vaast_block_instructions = function(n)  {
 // Demographic block ---------------------------------------------------------------------
 // Demographic variables
 var mcq_sexe_options = ["Hommme", "Femme"];
-var mcq_handedness_options = ["Droitier(e)", "Gaucher(e)"];
+var mcq_handedness_options = ["Droitier·e", "Gaucher·e"];
 var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt bon", "Moyen", "Plutôt mauvais", "Plutôt très mauvais"];
 
 // ---------------------------------------------------------------------------------------
