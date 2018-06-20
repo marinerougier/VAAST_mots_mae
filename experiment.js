@@ -166,7 +166,7 @@ var vaast_stim = [
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "erreur"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "fusillade"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "guerre"},
-  {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "larmes"},
+  {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "larme"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "maladie"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "malchance"},
   {category: "", movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "misère"},
@@ -207,7 +207,7 @@ var stim_sizes = [
 // Compute next position as function of current position and correct movement. Because
 // participant have to press the correct response key, it always shows the correct
 // position.
-var next_position = function(){
+var next_position_training = function(){
   var current_position = jsPsych.data.getLastTrialData().values()[0].position;
   var current_movement = jsPsych.data.getLastTrialData().values()[0].movement;
   var position = current_position;
@@ -217,6 +217,26 @@ var next_position = function(){
   }
 
   if(current_movement == "avoidance") {
+    position = position -1;
+  }
+
+  return(position)
+}
+
+var next_position = function(){
+  var current_position = jsPsych.data.getLastTrialData().values()[0].position;
+  var last_keypress = jsPsych.data.getLastTrialData().values()[0].key_press;
+
+  var approach_key = jsPsych.pluginAPI.convertKeyCharacterToKeyCode('y');
+  var avoidance_key = jsPsych.pluginAPI.convertKeyCharacterToKeyCode('n');
+
+  var position = current_position;
+
+  if(last_keypress == approach_key) {
+    position = position + 1;
+  }
+
+  if(last_keypress == avoidance_key) {
     position = position -1;
   }
 
@@ -430,7 +450,8 @@ var vaast_instructions_3 = {
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
     "<p class='instructions'>Au début de chaque essai, vous allez voir apparaître au centre de l'écran " +
-    "un point de fixation (+) suivi d'un mot.</p>" +
+    "un point de fixation (+). Vous allez alors voir apparaître au centre de l'écran le symbole \"O\", " +
+    " suivi d'un mot.</p>" +
     "<p class='instructions'>Votre tâche consistera à vous déplacer vers l'avant " +
     "ou vers l'arrière en appuyant une seule fois le plus rapidement possible sur " +
     "la touche \"avancer\" (Y) ou sur la touche \"reculer\" (N)." +
@@ -444,14 +465,14 @@ var vaast_instructions_4 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
-    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant " +
-    "sur Y)</strong> et vous <strong>ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant " +
-    "sur N</strong>." +
-
+    "<p class='instructions'>Vous devrez : " +
+    "<ul class='instructions'>" +
+    "<li><strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant sur Y)</strong></li>" +
+    "<li><strong> VOUS ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant sur N)</strong></li>" +
+    "</ul>" +
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
     "<strong>le plus rapidement et le plus exactement possible</strong>." +
-
     "<p class ='instructions'>Vous allez commencer par une phase d'entraînement.</p>" +
     "<p class ='instructions'><u>ATTENTION</u> : nous vous signalerons vos erreurs uniquement " +
     "dans la phase d'entraînement, donc relisez et mémorisez bien les consignes ci-dessus." +
@@ -461,7 +482,7 @@ var vaast_instructions_4 = {
          "<th>Avoid</th>" +
        "</tr>" +
      "</table>" +
-    "<p class = 'continue-instructions'>Appuyez sur <strong>entrer</strong> pour" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>entrée</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
 };
@@ -523,7 +544,7 @@ var vaast_fixation = {
   background_images: background
 }
 
-var vaast_first_step = {
+var vaast_first_step_training = {
   type: 'vaast-text',
   stimulus: jsPsych.timelineVariable('stimulus'),
   position: 2,
@@ -535,6 +556,32 @@ var vaast_first_step = {
   html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
   force_correct_key_press: true,
   display_feedback: true,
+  response_ends_trial: true
+}
+
+var vaast_second_step_training = {
+  type: 'vaast-text',
+  position: next_position_training,
+  stimulus: jsPsych.timelineVariable('stimulus'),
+  background_images: background,
+  font_sizes:  stim_sizes,
+  stim_movement: jsPsych.timelineVariable('movement'),
+  response_ends_trial: false,
+  trial_duration: 650
+}
+
+var vaast_first_step = {
+  type: 'vaast-text',
+  stimulus: jsPsych.timelineVariable('stimulus'),
+  position: 2,
+  background_images: background,
+  font_sizes:  stim_sizes,
+  approach_key: "y",
+  avoidance_key: "n",
+  stim_movement: jsPsych.timelineVariable('movement'),
+  html_when_wrong: '<span style="color: red; font-size: 80px">&times;</span>',
+  force_correct_key_press: false,
+  display_feedback: false,
   response_ends_trial: true
 }
 
@@ -552,10 +599,16 @@ var vaast_second_step = {
 // VAAST training block -----------------------------------------------------------------
 
 var vaast_training_block = {
-  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
+  timeline: [
+    vaast_start,
+    vaast_fixation,
+    vaast_first_step_training,
+    vaast_second_step_training,
+    save_vaast_trial
+  ],
   timeline_variables: vaast_stim,
   sample: {
-    size: 16,
+    size: 8,
     type: 'without-replacement',
   },
   randomize_order: true,
@@ -568,7 +621,13 @@ var vaast_training_block = {
 };
 
 var vaast_test_block = {
-  timeline: [vaast_start, vaast_fixation, vaast_first_step, vaast_second_step, save_vaast_trial],
+  timeline: [
+    vaast_start,
+    vaast_fixation,
+    vaast_first_step,
+    vaast_second_step,
+    save_vaast_trial
+  ],
   timeline_variables: vaast_stim,
   repetitions: 1,
   randomize_order: true,
@@ -578,6 +637,71 @@ var vaast_test_block = {
     movement: jsPsych.timelineVariable('movement'),
     gender:   jsPsych.timelineVariable('gender'),
   }
+};
+
+var vaast_instructions_6 = {
+  type: "html-keyboard-response",
+  stimulus:
+    "<h1 class ='custom-title'> Task 1 </h1>" +
+    "<p class='instructions'>This part of the experiment is now over. " +
+    "You will now have to complete a different task.</p>" +
+    "<p class = 'continue-instructions'>Press <strong>space</strong> to start Task 2.</p>",
+  choices: [32]
+};
+
+var vaast_block_instructions = function(n)  {
+  var n_prev = n - 1;
+
+  var block_instructions = {
+    type: "html-keyboard-response",
+    stimulus:
+      "<p>The block n°" + n_prev +" is over. " +
+      "<p class = 'continue-instructions'>Press <strong>space</strong> to start block n°"+ n +".</p>",
+    choices: [32]
+  };
+
+  return(block_instructions)
+}
+
+// Demographic block ---------------------------------------------------------------------
+// Demographic variables
+var mcq_sexe_options = ["Hommme", "Femme"];
+var mcq_handedness_options = ["Droitier(e)", "Gaucher(e)"];
+var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt bon", "Moyen", "Plutôt mauvais", "Plutôt très mauvais"];
+
+// ---------------------------------------------------------------------------------------
+var infographic_data_0 = {
+  type: 'html-keyboard-response',
+  stimulus:
+    "<p>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
+    "concernant : votre âge, votre sexe, votre latéralité, et votre niveau de maîtrise de la " +
+    "langue française. </p>" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
+  choices: [32]
+};
+
+var infographic_data_1 = {
+  type: 'survey-text',
+  questions: [{prompt: "Quel âge avez-vous ?"}],
+  button_label: "Passer à la question suivante"
+};
+
+var infographic_data_2 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Quel est votre sexe ?", options: mcq_sexe_options}],
+  button_label: "Passer à la question suivante"
+};
+
+var infographic_data_3 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Quel est votre latéralité ?", options: mcq_handedness_options}],
+  button_label: "Passer à la question suivante"
+};
+
+var infographic_data_4 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Quel est votre niveau de français ?", options: mcq_frenchLvl_options}],
+  button_label: "Passer à la suite"
 };
 
 
@@ -659,11 +783,17 @@ timeline.push(vaast_training_block,
 // vaast - end
 timeline.push(vaast_instructions_6);
 
+// demographic info
+timeline.push(infographic_data_0,
+              infographic_data_1,
+              infographic_data_2,
+              infographic_data_3,
+              infographic_data_4);
+
 // ending
 timeline.push(fullscreen_trial_exit);
 timeline.push(ending,
               ending_2);
-
 // Launch experiment --------------------------------------------------------------------
 // preloading ---------------------------------------------------------------------------
 // Preloading. For some reason, it appears auto-preloading fails, so using it manually.

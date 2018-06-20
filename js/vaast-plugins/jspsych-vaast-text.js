@@ -106,7 +106,7 @@
     html_str += "<div style='position:absolute;right:0;top:0;width:100%; height:100%;background:url("+trial.background_images[trial.position]+") center no-repeat;z-index:-1'></div>";
     html_str += "<div style='height: 100vh; display: flex; justify-content: center; align-items: center;z-index:1; color: #ffffff; font-size: "+trial.font_sizes[trial.position]+"px' id='jspsych-vaast-stim'>"+trial.stimulus+"</div>";
 
-    html_str += "<div id='wrongImgID' style='position:relative; top: 300px; margin-left: auto; margin-right: auto; left: 0; right: 0'>";
+    html_str += "<div id='wrongImgID' style='position:absolute; top: 75%; margin-left: auto; margin-right: auto; left: 0; right: 0'>";
 
     if(trial.display_feedback === true) {
       html_str += "<div id='wrongImgContainer' style='visibility: hidden; position: absolute; top: -75px; margin-left: auto; margin-right: auto; left: 0; right: 0'><p>"+trial.html_when_wrong+"</p></div>";
@@ -191,10 +191,7 @@
               valid_responses: trial.key_to_move_forward
             });}
            } else if(trial.response_ends_trial && trial.display_feedback != true) {
-            var keyListener = jsPsych.pluginAPI.getKeyboardResponse({
-              callback_function: end_trial,
-              valid_responses: [jsPsych.ALL_KEYS]
-            });
+            end_trial();
           } else if(!trial.response_ends_trial && trial.display_feedback != true) {
 
           }
@@ -223,10 +220,7 @@
               valid_responses: trial.key_to_move_forward
             });}
           } else if(trial.response_ends_trial && trial.display_feedback != true) {
-            var keyListener = jsPsych.pluginAPI.getKeyboardResponse({
-              callback_function: end_trial,
-              valid_responses: [jsPsych.ALL_KEYS]
-            });
+            end_trial();
           } else if(!trial.response_ends_trial && trial.display_feedback != true) {
 
           }
