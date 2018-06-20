@@ -465,19 +465,14 @@ var vaast_instructions_4 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
-    "<p class='instructions'>Vous devrez <strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant " +
-    "sur Y)</strong> et vous <strong>ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant " +
-    "sur N</strong>." +
-
+    "<p class='instructions'>Vous devrez : " +
+    "<ul class='instructions'>" +
+    "<li><strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant sur Y)</strong></li>" +
+    "<li><strong> VOUS ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant sur N)</strong></li>" +
+    "</ul>" +
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
     "<strong>le plus rapidement et le plus exactement possible</strong>." +
-     "<table align='center' class='vaast-table-instruction'>" +
-       "<tr>" +
-         "<th>Approach</th>" +
-         "<th>Avoid</th>" +
-       "</tr>" +
-     "</table>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>entrée</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
