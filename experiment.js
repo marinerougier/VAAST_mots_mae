@@ -478,7 +478,7 @@ var vaast_instructions_4 = {
          "<th>Avoid</th>" +
        "</tr>" +
      "</table>" +
-    "<p class = 'continue-instructions'>Appuyez sur <strong>entrer</strong> pour " +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>entrée</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
 };
