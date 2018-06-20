@@ -358,7 +358,7 @@ var welcome_3 = {
     "En cas d'échec, veuillez vérifier votre connexion internet et vous assurer de bien avoir " +
     "désactiver vos bloqueurs de publicités.</p>" +
     "<p class='instructions'>Ce test ne devrait pas prendre plus de 5 secondes.</p>" +
-    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
+    "<p class ='continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
 
@@ -637,7 +637,8 @@ timeline.push(instructions);
 timeline.push(vaast_instructions_1,
               vaast_instructions_2,
               vaast_instructions_3,
-              vaast_instructions_4);
+              vaast_instructions_4,
+              vaast_instructions_5);
 
 // vaast - blocks
 timeline.push(vaast_training_block,
