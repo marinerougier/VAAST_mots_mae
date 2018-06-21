@@ -484,8 +484,9 @@ var vaast_instructions_3 = {
   stimulus:
     "<h1 class ='custom-title'> Tâche </h1>" +
     "<p class='instructions'>Au début de chaque essai, vous allez voir apparaître au centre de l'écran " +
-    "un point de fixation (+). Vous allez alors voir apparaître au centre de l'écran le symbole \"O\", " +
-    " suivi d'un mot.</p>" +
+    "un point de fixation (+). Ce symbole indique que vous devez appuyer sur la touche DEPART (touche H) " +
+    "pour continuer.</p>" +
+    "<p class='instructions'>Vous allez alors voir apparaître au centre de l'écran le symbole \"O\", suivi d'un mot.</p>" +
     "<p class='instructions'>Votre tâche consistera à vous déplacer vers l'avant " +
     "ou vers l'arrière en appuyant une seule fois le plus rapidement possible sur " +
     "la touche \"avancer\" (Y) ou sur la touche \"reculer\" (N)." +
