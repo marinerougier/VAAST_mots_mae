@@ -96,7 +96,7 @@ switch(vaast_instructions) {
 
 // VAAST stimuli ------------------------------------------------------------------------
 // vaast image stimuli ------------------------------------------------------------------
-// TODO : choose movement
+
 var vaast_stim_training = [
   {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "bienfait"},
   {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "paradis"},
