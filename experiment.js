@@ -97,6 +97,20 @@ switch(vaast_instructions) {
 // VAAST stimuli ------------------------------------------------------------------------
 // vaast image stimuli ------------------------------------------------------------------
 // TODO : choose movement
+var vaast_stim_training = [
+  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "bienfait"},
+  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "paradis"},
+  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "repos"},
+  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "détente"},
+  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "sagesse"},
+  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "tranquillité"},
+  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "assassinat"},
+  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "décès"},
+  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "massacre"},
+  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "culpabilité"},
+  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "souffrance"},
+  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "violence"}
+]
 
 var vaast_stim = [
   {category: "", movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "accomplissement"},
@@ -626,11 +640,8 @@ var vaast_training_block = {
     vaast_second_step_training,
     save_vaast_trial
   ],
-  timeline_variables: vaast_stim,
-  sample: {
-    size: 8,
-    type: 'without-replacement',
-  },
+  timeline_variables: vaast_stim_training,
+  repetitions: 1,
   randomize_order: true,
   data: {
     phase:    "training",
