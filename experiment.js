@@ -510,12 +510,6 @@ var vaast_instructions_4 = {
     "<p class ='instructions'>Vous allez commencer par une phase d'entraînement.</p>" +
     "<p class ='instructions'><u>ATTENTION</u> : nous vous signalerons vos erreurs uniquement " +
     "dans la phase d'entraînement, donc relisez et mémorisez bien les consignes ci-dessus." +
-     "<table align='center' class='vaast-table-instruction'>" +
-       "<tr>" +
-         "<th>Approach</th>" +
-         "<th>Avoid</th>" +
-       "</tr>" +
-     "</table>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>entrée</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
