@@ -743,21 +743,15 @@ var fullscreen_trial_exit = {
 var ending = {
   type: "html-keyboard-response",
   stimulus:
-    "<p class='instructions'>This study is now over.<p>" +
-    "<p class='instructions'>In this study, we were interested in the effect of math " +
-    "approach or avoidance training. Literature in psychology shows that this kind of " +
-    "training can be used to create new attitudes toward a specific object. Approaching " +
-    "something make us see it more positively. </p>" +
-    "<p class='instructions'>Implicit self-association toward mathematic refers to " +
-    "one’s ability to be quicker in a timed sorting task when “self” and “math” are " +
-    "associated to a same response key instead of different ones. This implicit " +
-    "self-association can be used to predict behavior such as mathematic engagement and " +
-    "literature that it is lower among women. Here, we wanted to see if we could change " +
-    "the implicit self-association toward math using an approach training. </p>" +
-    "<p class='instructions'>For more information to this topic, please refer to " +
-    "Kawakami, Cifa, Steele, Phils, and Dovidio (2008)’s scientific paper, and if " +
-    "you still have any inquiries, please mail cedric.batailler@univ-grenoble-alpes.fr</p>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to continue.</p>",
+    "<p class='instructions'>Cette étude est maintenant terminée. Merci pour votre participation.<p>" +
+    "<p class='instructions'>Cette étude nous permettez d’étudiez les tendances à l’approche et à " +
+    "l’évitement. La littérature en psychologie sociale a pu mettre en évidence le fait que le simple " +
+    "fait de présenter certains concepts entraîner de manière spontanée des tendances à s’approcher ou " +
+    "à éviter ces concepts. Par exemple, la vision d’une glace facilitera l’exécution de mouvement d’approche." +
+    "</p>" +
+    "<p class='instructions'>Dans cette expérience, nous nous intéressons à délimiter certaines " +
+    "conditions nécessaires à l’apparition de ces tendances spontanées. </p>" +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
 
@@ -827,7 +821,7 @@ timeline.push(ending,
 // In principle, it should have ended when participants starts VAAST procedure (which)
 // contains most of the image that have to be pre-loaded.
 var loading_gif               = ["media/loading.gif"]
-var vaast_instructions_images = ["media/vaast-background.png", "media/keyboard-vaastt.png", "media/art_exemple.bmp", "media/math_exemple.bmp"];
+var vaast_instructions_images = ["media/vaast-background.png", "media/keyboard-vaastt.png"];
 var vaast_stim_filename       = vaast_stim.map(function(a){return(a.stimulus)});
 var vaast_bg_filename         = background;
 
