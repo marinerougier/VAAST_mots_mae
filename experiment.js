@@ -471,7 +471,7 @@ var vaast_instructions_2 = {
     "Votre tâche consistera à avancer ou à reculer en fonction du genre (masculin ou féminin) " +
     "du mot qui vous sera présenté (des instructions plus précises seront données juste après)." +
     "<p class='instructions'>Vous pourrez vous déplacer dans l'environnement en utilisant les " +
-    "touches Y, H et N de votre clavier. </p>" +
+    "touches Y, H et N de votre clavier, comme indiqué ci-dessous. </p>" +
     "<br>" +
     "<img src = 'media/keyboard-vaastt.png'>" +
     "<br>" +
