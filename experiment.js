@@ -359,7 +359,7 @@ var welcome = {
     "mais aucune information personnelle permettant de vous identifier ne sera récoltée. </p>" +
     "<p class='instructions'> Étant donné que pour la récolte des données nous dépendons de " +
     "fournisseurs de services tiers, il se peut que les logiciels de blocage de publicités (ex. Ad-block) " +
-    "interfère avec la récolte des données. Ainsi, nous vous demandons de bien vouloir désactiver de tels " +
+    "interfèrent avec la récolte des données. Ainsi, nous vous demandons de bien vouloir désactiver de tels " +
     "logiciels du temps de cette étude. " +
     "<b>Si nous ne sommes pas en mesure de récolter vos données, nous ne pourrons pas vous " +
     "récompenser pour votre participation</b>. </p>" +
@@ -410,7 +410,7 @@ var welcome_3 = {
   stimulus:
     "<p class='instructions'>Nous allons maintenant tester votre connexion à notre serveur. " +
     "En cas d'échec, veuillez vérifier votre connexion internet et vous assurer de bien avoir " +
-    "désactiver vos bloqueurs de publicités.</p>" +
+    "désactivé vos bloqueurs de publicités.</p>" +
     "<p class='instructions'>Ce test ne devrait pas prendre plus de 5 secondes.</p>" +
     "<p class ='continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
@@ -691,7 +691,7 @@ var vaast_block_instructions = function(n)  {
 
 // Demographic block ---------------------------------------------------------------------
 // Demographic variables
-var mcq_sexe_options = ["Hommme", "Femme"];
+var mcq_sexe_options = ["Homme", "Femme"];
 var mcq_handedness_options = ["Droitier·e", "Gaucher·e"];
 var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt bon", "Moyen", "Plutôt mauvais", "Plutôt très mauvais"];
 
