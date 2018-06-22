@@ -700,7 +700,7 @@ var demographic_data_0 = {
   type: 'html-keyboard-response',
   stimulus:
     "<p>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
-    "concernant : votre âge, votre sexe, votre latéralité, et votre niveau de maîtrise de la " +
+    "concernant : votre âge, votre genre, votre latéralité, et votre niveau de maîtrise de la " +
     "langue française. </p>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
@@ -714,7 +714,7 @@ var demographic_data_1 = {
 
 var demographic_data_2 = {
   type: 'survey-multi-choice',
-  questions: [{prompt : "Quel est votre sexe ?", options: mcq_sexe_options}],
+  questions: [{prompt : "Quel est votre genre ?", options: mcq_sexe_options}],
   button_label: "Passer à la question suivante"
 };
 
