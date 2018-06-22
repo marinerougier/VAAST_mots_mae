@@ -354,7 +354,7 @@ var welcome = {
   stimulus:
     "<h1 class ='custom-title'> Bienvenue </h1>" +
     "<p class='instructions'> Nous vous remercions de prendre part à cette étude.<p>" +
-    "<p class='instructions'> Au cours de cette étude, vous serez amené à compléter une tâche. " +
+    "<p class='instructions'> Au cours de cette étude, vous serez amené·e à compléter une tâche. " +
     "Nous rassemblerons des données concernant la façon dont vous aurez rempli cette tâche, " + 
     "mais aucune information personnelle permettant de vous identifier ne sera récoltée. </p>" +
     "<p class='instructions'> Étant donné que pour la récolte des données nous dépendons de " +
