@@ -528,7 +528,8 @@ var vaast_instructions_4 = {
     "<strong>le plus rapidement et le plus exactement possible</strong>." +
     "<p class ='instructions'>Vous allez commencer par une phase d'entraînement.</p>" +
     "<p class ='instructions'><u>ATTENTION</u> : nous vous signalerons vos erreurs uniquement " +
-    "dans la phase d'entraînement, donc relisez et mémorisez bien les consignes ci-dessus." +
+    "dans la phase d'entraînement, donc relisez et mémorisez bien les consignes ci-dessus. " + 
+    "Si vous commettez une erreur, vous devrez vous corriger." +
     "<p class = 'continue-instructions'>Appuyez sur <strong>entrée</strong> pour " +
     "commencer l'entraînement.</p>",
   choices: [13]
