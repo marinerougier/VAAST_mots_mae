@@ -70,6 +70,24 @@ var vaast_instructions = jsPsych.randomization.sampleWithoutReplacement(["approa
 
 var jspsych_id  = jsPsych.randomization.randomID();
 
+ // cursor helper functions
+var hide_cursor = function() {
+	document.querySelector('head').insertAdjacentHTML('beforeend', '<style id="cursor-toggle"> html { cursor: none; } </style>');
+}
+var show_cursor = function() {
+	document.querySelector('#cursor-toggle').remove();
+}
+
+var hiding_cursor = {
+    type: 'call-function',
+    func: hide_cursor
+}
+
+var showing_cursor = {
+    type: 'call-function',
+    func: show_cursor
+}
+
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
 
@@ -766,7 +784,8 @@ timeline.push(welcome,
 timeline.push(keen_ping);
 
 // fullscreen
-timeline.push(fullscreen_trial);
+timeline.push(fullscreen_trial,
+			  hiding_cursor);
 
 // prolific verification
 timeline.push(save_id);
@@ -788,6 +807,9 @@ timeline.push(vaast_training_block,
 // vaast - end
 timeline.push(vaast_instructions_6);
 
+timeline.push(fullscreen_trial_exit,
+	          showing_cursor);
+
 // demographic info
 timeline.push(demographic_data_0,
               demographic_data_1,
@@ -797,7 +819,6 @@ timeline.push(demographic_data_0,
               save_demographics);
 
 // ending
-timeline.push(fullscreen_trial_exit);
 timeline.push(ending,
               ending_2);
 // Launch experiment --------------------------------------------------------------------
