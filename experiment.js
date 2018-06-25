@@ -452,8 +452,8 @@ var instructions = {
 var vaast_instructions_1 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Tâche </h1>" +
-    "<p class='instructions'>Au cours de cette tâche, comme dans un jeu vidéo, vous serez " +
+    "<h1 class ='custom-title'> Tâche du Jeu Vidéo</h1>" +
+    "<p class='instructions'>Au cours de cette étude, comme dans un jeu vidéo, vous serez " +
     "dans un environnement dans lequel vous pourrez avancer ou reculer. L'environnement " +
     "dans lequel vous pourrez vous déplacer est présenté ci-dessous.</p>" +
     "<br>" +
@@ -466,7 +466,7 @@ var vaast_instructions_1 = {
 var vaast_instructions_2 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<h1 class ='custom-title'> Tâche du Jeu Vidéo </h1>" +
     "<p class='instructions'>Des mots vous seront présentés dans cette environnement. " +
     "Votre tâche consistera à avancer ou à reculer en fonction du genre (masculin ou féminin) " +
     "du mot qui vous sera présenté (des instructions plus précises seront données juste après)." +
@@ -482,7 +482,7 @@ var vaast_instructions_2 = {
 var vaast_instructions_3 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<h1 class ='custom-title'> Tâche du Jeu Vidéo </h1>" +
     "<p class='instructions'>Au début de chaque essai, vous allez voir apparaître au centre de l'écran " +
     "un point de fixation (o). Ce symbole indique que vous devez appuyer sur la touche DEPART (touche H) " +
     "pour continuer.</p>" +
@@ -499,7 +499,7 @@ var vaast_instructions_3 = {
 var vaast_instructions_4 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<h1 class ='custom-title'> Tâche du Jeu Vidéo </h1>" +
     "<p class='instructions'>Vous devrez : " +
     "<ul class='instructions'>" +
     "<li><strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant sur Y)</strong></li>" +
@@ -520,7 +520,7 @@ var vaast_instructions_4 = {
 var vaast_instructions_5 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Tâche </h1>" +
+    "<h1 class ='custom-title'> Tâche du Jeu Vidéo </h1>" +
     "<p class='instructions'>L'entraînement est maintenant terminé. </p>" +
     "<p class='instructions'><u>ATTENTION</u> : vous n'aurez plus de messages pour signaler vos erreurs.</p>" +
     "<p class='instructions'>Donc rappelez-vous bien, vous devez :</p>" +
