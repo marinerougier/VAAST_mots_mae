@@ -686,10 +686,9 @@ var vaast_test_block = {
 var vaast_instructions_6 = {
   type: "html-keyboard-response",
   stimulus:
-    "<h1 class ='custom-title'> Task 1 </h1>" +
-    "<p class='instructions'>This part of the experiment is now over. " +
-    "You will now have to complete a different task.</p>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to start Task 2.</p>",
+    "<h1 class ='custom-title'> Tâche du Jeu Vidéo</h1>" +
+    "<p class='instructions'>Cette partie de l'étude est maintenant terminée. " +
+    "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
 
