@@ -730,10 +730,10 @@ var ending = {
   type: "html-keyboard-response",
   stimulus:
     "<p class='instructions'>Cette étude est maintenant terminée. Merci pour votre participation.<p>" +
-    "<p class='instructions'>Cette étude nous permettez d’étudiez les tendances à l’approche et à " +
+    "<p class='instructions'>Cette étude nous permettait d’étudier les tendances à l’approche et à " +
     "l’évitement. La littérature en psychologie sociale a pu mettre en évidence le fait que le simple " +
-    "fait de présenter certains concepts entraîner de manière spontanée des tendances à s’approcher ou " +
-    "à éviter ces concepts. Par exemple, la vision d’une glace facilitera l’exécution de mouvement d’approche." +
+    "fait de présenter certains concepts entraînait de manière spontanée des tendances à s’approcher ou " +
+    "s'éloigner de ces concepts. Par exemple, la vision d’une glace facilitera l’exécution de mouvement d’approche." +
     "</p>" +
     "<p class='instructions'>Dans cette expérience, nous nous intéressons à délimiter certaines " +
     "conditions nécessaires à l’apparition de ces tendances spontanées. </p>" +
