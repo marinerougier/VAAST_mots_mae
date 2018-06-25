@@ -555,17 +555,6 @@ var vaast_instructions_5 = {
   choices: [32]
 };
 
-
-var vaast_instructions_6 = {
-  type: "html-keyboard-response",
-  stimulus:
-    "<h1 class ='custom-title'> Task 1 </h1>" +
-    "<p class='instructions'>This part of the experiment is now over. " +
-    "You will now have to complete a different task.</p>" +
-    "<p class = 'continue-instructions'>Press <strong>space</strong> to start Task 2.</p>",
-  choices: [32]
-};
-
 // Creating a trial ---------------------------------------------------------------------
 // Note: vaast_start trial is a dirty hack which uses a regular vaast trial. The correct
 // movement is approach and the key corresponding to approach is "h", thus making the
