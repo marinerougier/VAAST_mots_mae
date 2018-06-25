@@ -840,7 +840,7 @@ if(is_compatible) {
       },
     on_finish: function() {
         saving_browser_events(completion = true);
-        window.location.href = "https://www.prolific.ac/submissions/complete?cc=6KIE4JZ6";
+        window.location.href = "16ff0d6a46e619cf8deefd84e3cda0137733cca215f955fc73923a1241d908fa.html";
     }
   });
 }
