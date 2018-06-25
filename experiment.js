@@ -703,7 +703,7 @@ var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt 
 var demographic_data_0 = {
   type: 'html-keyboard-response',
   stimulus:
-    "<p>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
+    "<p class='instructions'>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
     "concernant : votre âge, votre sexe, votre latéralité, et votre niveau de maîtrise de la " +
     "langue française. </p>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
