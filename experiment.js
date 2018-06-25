@@ -199,9 +199,9 @@ var vaast_stim = [
 
 var background = [
   "background/2.jpg",
-  "background/3.jpg",
+  "background/2.jpg",
   "background/4.jpg",
-  "background/5.jpg",
+  "background/6.jpg",
   "background/6.jpg"
 ];
 
@@ -210,9 +210,9 @@ var background = [
 
 var stim_sizes = [
   40,
-  43,
+  42,
   46,
-  50,
+  52,
   54
 ];
 
