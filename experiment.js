@@ -291,7 +291,6 @@ var saving_id = function(){
       client.recordEvent('stream_browser_info', {
         session_id: jspsych_id,
         experimental_condition: vaast_instructions,
-        "ip_address" : "${keen.ip}",
         "user_agent": "${keen.user_agent}",
         res_height: window.screen.availHeight,
         res_width: window.screen.availWidth,

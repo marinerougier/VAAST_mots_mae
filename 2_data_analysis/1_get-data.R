@@ -87,12 +87,9 @@ browser_info_tidy <-
                      user_agent     = .x$user_agent,
                      timestamp      = .x$keen$timestamp,
                      res_height     = .x$res_height,
-                     res_width      = .x$res_width,
-                     ip_address     = .x$ip_address)) %>% 
-  mutate(ip_infos = map(ip_address, ~rgeolocate::ip_api(.x))) %>% 
-  unnest() %>% 
-  select(-ip_address)
-
+                     res_width      = .x$res_width) ) %>% 
+  unnest()
+  
 browser_info_tidy %>% 
   write_csv("data/browser_info_dataset.csv")
 
