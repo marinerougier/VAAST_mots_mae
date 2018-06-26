@@ -371,7 +371,7 @@ var welcome = {
   stimulus:
     "<h1 class ='custom-title'> Bienvenue </h1>" +
     "<p class='instructions'> Nous vous remercions de prendre part à cette étude.<p>" +
-    "<p class='instructions'> Au cours de cette étude, vous serez amené·e à compléter une tâche. " +
+    "<p class='instructions'> Au cours de celle-ci, vous serez amené·e à compléter une tâche. " +
     "Nous rassemblerons des données concernant la façon dont vous aurez rempli cette tâche, " + 
     "mais aucune information personnelle permettant de vous identifier ne sera récoltée. </p>" +
     "<p class='instructions'> Étant donné que pour la récolte des données nous dépendons de " +
@@ -501,7 +501,7 @@ var vaast_instructions_3 = {
   stimulus:
     "<h1 class ='custom-title'> Tâche du Jeu Vidéo </h1>" +
     "<p class='instructions'>Au début de chaque essai, vous allez voir apparaître au centre de l'écran " +
-    "un point de fixation (o). Ce symbole indique que vous devez appuyer sur la touche DEPART (touche H) " +
+    "un point de fixation (le symbole \"o\"). Ce symbole indique que vous devez appuyer sur la touche DEPART (touche H) " +
     "pour continuer.</p>" +
     "<p class='instructions'>Vous allez alors voir apparaître au centre de l'écran le symbole \"+\", suivi d'un mot.</p>" +
     "<p class='instructions'>Votre tâche consistera à vous déplacer vers l'avant " +
@@ -692,7 +692,7 @@ var demographic_data_0 = {
   type: 'html-keyboard-response',
   stimulus:
     "<p class='instructions'>Cette étude est presque terminée, nous allons maintenant vous demander de répondre à quelques questions " +
-    "concernant : votre âge, votre sexe, votre latéralité, et votre niveau de maîtrise de la " +
+    "concernant : votre âge, votre sexe, votre latéralité et votre niveau de maîtrise de la " +
     "langue française. </p>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
@@ -737,8 +737,8 @@ var ending = {
   stimulus:
     "<p class='instructions'>Cette étude est maintenant terminée. Merci pour votre participation.<p>" +
     "<p class='instructions'>Cette étude nous permettait d’étudier les tendances à l’approche et à " +
-    "l’évitement. La littérature en psychologie sociale a pu mettre en évidence le fait que le simple " +
-    "fait de présenter certains concepts entraînait de manière spontanée des tendances à s’approcher ou " +
+    "l’évitement. La littérature en psychologie sociale a pu mettre en évidence le fait que la simple " +
+    "présentation de certains concepts entraînait de manière spontanée des tendances à s’approcher ou " +
     "s'éloigner de ces concepts. Par exemple, la vision d’une glace facilitera l’exécution de mouvement d’approche." +
     "</p>" +
     "<p class='instructions'>Dans cette expérience, nous nous intéressons à délimiter certaines " +
