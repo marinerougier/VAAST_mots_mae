@@ -676,7 +676,7 @@ var vaast_instructions_6 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Tâche du Jeu Vidéo</h1>" +
-    "<p class='instructions'>Cette partie de l'étude est maintenant terminée. " +
+    "<p><center>Cette partie de l'étude est maintenant terminée.</center></p>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour continuer.</p>",
   choices: [32]
 };
