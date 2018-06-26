@@ -31,7 +31,7 @@ $('body').css({'overflow':'hidden'});
   });
 
 // safari & ie exclusion ----------------------------------------------------------------
-var is_safari = /^((?!chrome|android).)*safari+ie/i.test(navigator.userAgent);
+var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 var is_ie = /*@cc_on!@*/false || !!document.documentMode;
 
 var is_compatible = !(is_safari || is_ie);
