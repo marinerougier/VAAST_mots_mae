@@ -381,7 +381,7 @@ var welcome = {
     "<b>Si nous ne sommes pas en mesure de récolter vos données, nous ne pourrons pas vous " +
     "récompenser pour votre participation</b>. </p>" +
     "<p class='instructions'>Pour toute question au sujet de cette étude, veuillez " +
-    "contacter xxxxx.</p>" +
+    "contacter dominique.muller@univ-grenoble-alpes.fr.</p>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour commencer l'étude.</p>",
   choices: [32]
 };
