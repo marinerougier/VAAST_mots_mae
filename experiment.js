@@ -524,7 +524,7 @@ var vaast_instructions_4 = {
     "</ul>" +
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
-    "<strong>le plus rapidement et le plus exactement possible</strong>." +
+    "<strong>LE PLUS RAPIDEMENT ET LE PLUS EXACTEMENT POSSIBLE</strong>." +
     "<p class ='instructions'>Vous allez commencer par une phase d'entraînement.</p>" +
     "<p class ='instructions'><u>ATTENTION</u> : nous vous signalerons vos erreurs uniquement " +
     "dans la phase d'entraînement, donc relisez et mémorisez bien les consignes ci-dessus. " + 
