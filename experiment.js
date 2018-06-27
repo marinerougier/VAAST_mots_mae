@@ -327,7 +327,7 @@ var saving_demographics = function(){
       client.recordEvent('stream_demographics', {
         session_id: jspsych_id,
         experimental_condition: vaast_instructions,
-        demographics_data: jsPsych.data.get().last(4).json()
+        demographics_data: jsPsych.data.get().last(5).json()
       });
     }
   });
@@ -686,6 +686,7 @@ var vaast_instructions_6 = {
 var mcq_sexe_options = ["Homme", "Femme"];
 var mcq_handedness_options = ["Droitier·e", "Gaucher·e"];
 var mcq_frenchLvl_options = ["Langue maternelle", "Plutôt très bon", "Plutôt bon", "Moyen", "Plutôt mauvais", "Plutôt très mauvais"];
+var mcq_vaast = ["Oui", "Non"];
 
 // ---------------------------------------------------------------------------------------
 var demographic_data_0 = {
@@ -722,6 +723,11 @@ var demographic_data_4 = {
   button_label: "Passer à la suite"
 };
 
+var demographic_data_5 = {
+  type: 'survey-multi-choice',
+  questions: [{prompt : "Aviez vous déjà passé la Tâche du Jeu Vidéo", options: mcq_vaast}],
+  button_label: "Passer à la suite"
+};
 
 // end fullscreen -----------------------------------------------------------------------
 
@@ -793,6 +799,7 @@ timeline.push(demographic_data_0,
               demographic_data_2,
               demographic_data_3,
               demographic_data_4,
+              demographic_data_5,
               save_demographics);
 
 // ending
