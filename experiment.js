@@ -650,6 +650,7 @@ var vaast_training_block = {
     stimulus: jsPsych.timelineVariable('stimulus'),
     movement: jsPsych.timelineVariable('movement'),
     gender:   jsPsych.timelineVariable('gender'),
+    valence:  jsPsych.timelineVariable('valence'),
   }
 };
 
@@ -669,6 +670,7 @@ var vaast_test_block = {
     stimulus: jsPsych.timelineVariable('stimulus'),
     movement: jsPsych.timelineVariable('movement'),
     gender:   jsPsych.timelineVariable('gender'),
+    valence:  jsPsych.timelineVariable('valence'),
   }
 };
 
