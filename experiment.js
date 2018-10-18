@@ -66,7 +66,7 @@ if(!is_compatible) {
 // Variable input -----------------------------------------------------------------------
 // Variable used to define experimental condition.
 
-var vaast_instructions = jsPsych.randomization.sampleWithoutReplacement(["approach_masc", "approach_fem"], 1)[0];
+var vaast_instructions = jsPsych.randomization.sampleWithoutReplacement(["approach_black", "approach_white"], 1)[0];
 
 var jspsych_id  = jsPsych.randomization.randomID();
 
@@ -91,24 +91,24 @@ var showing_cursor = {
 // VAAST --------------------------------------------------------------------------------
 // VAAST variables ----------------------------------------------------------------------
 
-var movement_masc = undefined;
-var movement_fem = undefined;
-var gender_to_approach = undefined;
-var gender_to_avoid = undefined;
+var movement_black = undefined;
+var movement_white = undefined;
+var group_to_approach = undefined;
+var group_to_avoid = undefined;
 
 switch(vaast_instructions) {
-  case "approach_masc":
-    movement_masc = "approach";
-    movement_fem = "avoidance";
-    gender_to_approach = "masculins";
-    gender_to_avoid = "féminins";
+  case "approach_black":
+    movement_black = "approach";
+    movement_white = "avoidance";
+    group_to_approach = "black";
+    group_to_avoid = "white";
     break;
 
-  case "approach_fem":
-    movement_masc = "avoidance";
-    movement_fem = "approach";
-    gender_to_approach = "féminins";
-    gender_to_avoid = "masculins";
+  case "approach_white":
+    movement_black = "avoidance";
+    movement_white = "approach";
+    group_to_approach = "white";
+    group_to_avoid = "black";
     break;
 }
 
@@ -116,101 +116,17 @@ switch(vaast_instructions) {
 // vaast image stimuli ------------------------------------------------------------------
 
 var vaast_stim_training = [
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "bienfait"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "paradis"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "repos"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "détente"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "sagesse"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "tranquillité"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "assassinat"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "décès"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "massacre"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "culpabilité"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "souffrance"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "violence"}
+  {movement: movement_black, group: "black", stimulus: "Jamel"},
+  {movement: movement_black, group: "black", stimulus: "Alonzo"},
+  {movement: movement_white,  group: "white",  stimulus: "Chip"},
+  {movement: movement_white,  group: "white",  stimulus: "Adam"}
 ]
 
 var vaast_stim = [
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "accomplissement"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "anniversaire"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "avantage"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "bébé"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "bonheur"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "cadeau"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "câlin"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "charme"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "diplôme"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "espoir"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "humour"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "mariage"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "partage"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "plaisir"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "remerciement"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "rire"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "soleil"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "sourire"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "succès"},
-  {movement: movement_masc, gender: "masculin", valence: "positif", stimulus: "triomphe"},
-  {movement: movement_fem,  gender: "feminin" , valence: "positif", stimulus: "amitié"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "fête"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "fleur"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "gloire"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "grandeur"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "joie"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "justice"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "lumière"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "naissance"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "paix"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "passion"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "plage"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "prairie"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "promotion"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "prospérité"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "réussite"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "santé"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "satisfaction"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "sérénité"},
-  {movement: movement_fem,  gender: "feminin",  valence: "positif", stimulus: "vacances"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "abandon"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "accident"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "attentat"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "bruit"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "cadavre"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "cancer"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "cercueil"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "couteau"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "danger"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "divorce"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "doute"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "échec"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "enterrement"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "étouffement"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "handicap"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "malheur"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "meurtre"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "poison"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "rejet"},
-  {movement: movement_masc, gender: "masculin", valence: "negatif", stimulus: "suicide"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "arme"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "blessure"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "bombe"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "douleur"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "erreur"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "fusillade"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "guerre"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "larme"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "maladie"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "malchance"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "misère"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "mort"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "noyade"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "obscurité"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "ombre"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "panique"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "paresse"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "tombe"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "tumeur"},
-  {movement: movement_fem,  gender: "feminin",  valence: "negatif", stimulus: "torture"}
+  {movement: movement_black, group: "black", stimulus: "Jamel"},
+  {movement: movement_black, group: "black", stimulus: "Alonzo"},
+  {movement: movement_white,  group: "white",  stimulus: "Chip"},
+  {movement: movement_white,  group: "white",  stimulus: "Adam"}
 ];
 
 // vaast background images --------------------------------------------------------------,
@@ -519,8 +435,8 @@ var vaast_instructions_4 = {
     "<h1 class ='custom-title'> Tâche du Jeu Vidéo </h1>" +
     "<p class='instructions'>Vous devrez : " +
     "<ul class='instructions'>" +
-    "<li><strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant sur Y)</strong></li>" +
-    "<li><strong> VOUS ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant sur N)</strong></li>" +
+    "<li><strong>ALLER VERS les mots " + group_to_approach + " (en appuyant sur Y)</strong></li>" +
+    "<li><strong> VOUS ÉLOIGNER des mots " + group_to_avoid + " (en appuyant sur N)</strong></li>" +
     "</ul>" +
     "<p class='instructions'>Il est très important de vous souvenir de ces consignes pour pouvoir " +
     "réaliser la tâche correctement. Il est également EXTRÊMEMENT important d'essayer de répondre " +
@@ -544,10 +460,10 @@ var vaast_instructions_5 = {
     "<p class='instructions'>Donc rappelez-vous bien, vous devez :</p>" +
     "<ul class='instructions'>" +
      "<li>" +
-      "<strong>ALLER VERS les mots " + gender_to_approach + " (en appuyant sur Y)</strong>" +
+      "<strong>ALLER VERS les mots " + group_to_approach + " (en appuyant sur Y)</strong>" +
      "</li>" +
      "<li>" +
-      "<strong>VOUS ÉLOIGNER des mots " + gender_to_avoid + " (en appuyant sur N)</strong>" +
+      "<strong>VOUS ÉLOIGNER des mots " + group_to_avoid + " (en appuyant sur N)</strong>" +
      "</li>" +
     "</ul>" +
     "<p class = 'continue-instructions'>Appuyez sur <strong>espace</strong> pour commencer la tâche.</p>",
@@ -649,8 +565,7 @@ var vaast_training_block = {
     phase:    "training",
     stimulus: jsPsych.timelineVariable('stimulus'),
     movement: jsPsych.timelineVariable('movement'),
-    gender:   jsPsych.timelineVariable('gender'),
-    valence:  jsPsych.timelineVariable('valence'),
+    group:   jsPsych.timelineVariable('group'),
   }
 };
 
@@ -669,8 +584,7 @@ var vaast_test_block = {
     phase:    "test",
     stimulus: jsPsych.timelineVariable('stimulus'),
     movement: jsPsych.timelineVariable('movement'),
-    gender:   jsPsych.timelineVariable('gender'),
-    valence:  jsPsych.timelineVariable('valence'),
+    group:   jsPsych.timelineVariable('group'),
   }
 };
 
